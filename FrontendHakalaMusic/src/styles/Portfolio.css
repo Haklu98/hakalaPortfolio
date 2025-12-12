@@ -1,0 +1,56 @@
+.page {
+  padding: 6rem 2rem 2rem 2rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.portfolio-item h3 {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.placeholder-image {
+  background: #f0f0f0;
+  border: 2px dashed #ccc;
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  border-radius: 5px;
+}
+
+@media (max-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 5rem 1rem 1rem 1rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 5rem 0.5rem 0.5rem 0.5rem;
+  }
+  
+  .portfolio-grid {
+    gap: 1rem;
+  }
+  
+  .placeholder-image {
+    padding: 1.5rem;
+    font-size: 0.9rem;
+  }
+}

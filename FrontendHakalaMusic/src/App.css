@@ -1,0 +1,89 @@
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #ffffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent scrollbars */
+html, body {
+  overflow: hidden;
+}
+
+/* Touch-friendly buttons */
+button {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1441px) and (max-width: 1920px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* 2K Resolution */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+/* 4K Resolution */
+@media (min-width: 2561px) {
+  body {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,121 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .navigation.nav-hidden {
+    transform: translateY(-100%);
+  }
+}
+
+.nav-brand h2 {
+  margin: 0;
+  color: #fff;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.nav-links a:hover {
+  color: #007bff;
+}
+
+.nav-links a.active {
+  color: #007bff;
+  font-weight: 600;
+}
+
+.lang-slider {
+  display: flex;
+  border: 1px solid #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.lang-slider button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.lang-slider button.active {
+  background: #fff;
+  color: #000;
+}
+
+.lang-slider button:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-radius: 0 0 8px 8px;
+    padding: 1rem 0;
+    gap: 0;
+    transform: translateY(-10px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-links li {
+    padding: 0.5rem 1.5rem;
+  }
+  
+  .nav-links a {
+    display: block;
+    padding: 0.5rem 0;
+  }
+}
