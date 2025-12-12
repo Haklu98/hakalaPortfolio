@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(0, 0, 0, 0.8);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  background: rgba(0, 0, 0, 0.56);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.46);
   position: absolute;
   top: 0;
   left: 0;
@@ -51,12 +51,26 @@
 }
 
 .nav-links a:hover {
-  color: #007bff;
+  color: #d579faff;
 }
 
 .nav-links a.active {
-  color: #007bff;
+  color: #b700ffff;
   font-weight: 600;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #b700ffff;
+  box-shadow: 0 0 8px #b700ffff, 0 0 18px #b700ffff;
+  border-radius: 1px;
+  radius: 1rem;
 }
 
 .lang-slider {
