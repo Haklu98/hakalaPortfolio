@@ -1,4 +1,4 @@
-import '../styles/Contact.css';
+import './Contact.css';
 
 interface ContactProps {
   language: string;

@@ -1,4 +1,4 @@
-import '../styles/About.css';
+import './About.css';
 
 interface AboutProps {
   language: string;

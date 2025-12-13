@@ -1,4 +1,4 @@
-import '../styles/Home.css';
+import './Home.css';
 
 interface HomeProps {
   language: string;
@@ -7,12 +7,12 @@ interface HomeProps {
 const Home = ({ language }: HomeProps) => {
   const translations = {
     en: {
-      title: 'Welcome to My Music',
-      subtitle: 'Discover my musical journey and creative sound',
+      title: 'Welcome to experience my Music!',
+      subtitle: 'Discover the wonders of music and creativity through a plethora of hand-crafted melodies',
       button: 'Listen Now'
     },
     fi: {
-      title: 'Tervetuloa Musiikkiini',
+      title: 'Tervetuloa meikäläisen musan pariin!',
       subtitle: 'Tutustu musiikilliseen matkaani ja luovaan ääneen',
       button: 'Kuuntele Nyt'
     }

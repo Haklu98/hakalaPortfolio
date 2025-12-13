@@ -1,4 +1,4 @@
-import '../styles/Portfolio.css';
+import './Portfolio.css';
 
 interface PortfolioProps {
   language: string;

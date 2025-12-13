@@ -40,6 +40,7 @@
   margin: 0;
   padding: 0;
   gap: 2rem;
+  align-items: center;
 }
 
 .nav-links a {
@@ -73,27 +74,19 @@
   radius: 1rem;
 }
 
-.lang-slider {
-  display: flex;
-  border: 1px solid #fff;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.lang-slider button {
+.lang-button {
   background: none;
-  border: none;
+  border: 1px solid #fff;
   color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
+  width: 2rem;
+  transition: all 0.3s;
 }
 
-.lang-slider button.active {
-  background: #fff;
-  color: #000;
-}
-
-.lang-slider button:hover:not(.active) {
+.lang-button:hover {
   background: rgba(255, 255, 255, 0.2);
 }
 

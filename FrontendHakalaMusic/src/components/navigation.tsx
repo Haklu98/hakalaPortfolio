@@ -65,20 +65,12 @@ const Navigation = ({ currentPage, setCurrentPage, language, setLanguage }: Navi
         <li><a onClick={() => handleNavClick('portfolio')} className={currentPage === 'portfolio' ? 'active' : ''}>{t.music}</a></li>
         <li><a onClick={() => handleNavClick('contact')} className={currentPage === 'contact' ? 'active' : ''}>{t.contact}</a></li>
         <li className="lang-toggle">
-          <div className="lang-slider">
-            <button 
-              className={language === 'en' ? 'active' : ''}
-              onClick={() => setLanguage('en')}
-            >
-              EN
-            </button>
-            <button 
-              className={language === 'fi' ? 'active' : ''}
-              onClick={() => setLanguage('fi')}
-            >
-              FI
-            </button>
-          </div>
+          <button 
+            className="lang-button"
+            onClick={() => setLanguage(language === 'en' ? 'fi' : 'en')}
+          >
+            {language.toUpperCase()}
+          </button>
         </li>
       </ul>
     </nav>

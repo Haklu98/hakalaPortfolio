@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import Navigation from './components/navigation';
-import Home from './pages/Home';
-import About from './pages/About';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
+import Home from './pages/home/Home';
+import About from './pages/about/About';
+import Portfolio from './pages/portfolio/Portfolio';
+import Contact from './pages/contact/Contact';
 import './App.css';
 
 function App() {
