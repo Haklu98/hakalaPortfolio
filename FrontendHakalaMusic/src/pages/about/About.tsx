@@ -1,4 +1,5 @@
 import './About.css';
+import myselfImage from '../../assets/myself.jpeg';
 
 interface AboutProps {
   language: string;
@@ -23,7 +24,7 @@ const About = ({ language }: AboutProps) => {
   const t = translations[language as keyof typeof translations];
 
   return (
-    <div className="page">
+    <div className="page-about">
       <h1>{t.title}</h1>
       <div className="about-content">
         <div className="about-text">
@@ -31,7 +32,7 @@ const About = ({ language }: AboutProps) => {
           <p>{t.text2}</p>
         </div>
         <div className="about-image">
-          <div className="placeholder-image">{t.photo}</div>
+          <img className="artist-image" src={myselfImage} alt={t.photo} />
         </div>
       </div>
     </div>

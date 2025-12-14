@@ -1,12 +1,11 @@
-.page {
+.page-about {
   padding: 2rem;
   min-height: 50vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin: 3rem;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.598), rgba(47, 47, 47, 0.683));
 }
 
@@ -23,12 +22,13 @@
 }
 
 .placeholder-image {
-  background: #f0f0f0;
-  border: 2px dashed #ccc;
-  padding: 2rem;
-  text-align: center;
-  color: #666;
   border-radius: 5px;
+}
+
+.artist-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {

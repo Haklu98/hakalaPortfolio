@@ -1,21 +1,19 @@
 .page {
   padding: 2rem;
-  min-height: 50vh;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .page.home {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin: 3rem;
+  min-height: 50vh;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.598), rgba(47, 47, 47, 0.683));
 }
 
 .hero {
+
   text-align: center;
   padding: 0;
 }
@@ -44,6 +42,11 @@
 @media (max-width: 768px) {
   .page {
     padding: 1rem;
+  }
+
+  .page.home {
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   
   .hero {

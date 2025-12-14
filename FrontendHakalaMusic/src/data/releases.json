@@ -1,0 +1,277 @@
+[
+  {
+    "id": 1,
+    "title": "Keskeneräinen",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2018-10-19",
+    "coverImage": "/src/assets/album-covers/keskenerainen.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/6V2PQgivuP46rHcBycviBz?si=a61bf55b69054fa4",
+      "applemusic": "https://music.apple.com/us/song/keskener%C3%A4inen/1439082938",
+      "youtube": "https://www.youtube.com/watch?v=G5LyV28VEkY&list=OLAK5uy_kEjFLHlCALxBnApNt1bKNuRuhnX4mqreI"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Sanoja",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2019-03-15",
+    "coverImage": "/src/assets/album-covers/sanoja.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/77nn2qx656NSG9adDo6b9T?si=a02d9eb559e940b0",
+      "applemusic": "https://music.apple.com/us/song/sanoja/1455640498",
+      "youtube": "https://www.youtube.com/watch?v=oNECQWR8rIM&list=OLAK5uy_mtZkg0LGjwRmFNNSmHX7mBt8baYQe2rVQ"
+    }
+  },
+{
+    "id": 3,
+    "title": "Tell Me",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2020-10-05",
+    "coverImage": "/src/assets/album-covers/tellme.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/1B8cYDPnNFlVo7MwhBlvA3?si=4de23803fb1b437d",
+      "applemusic": "https://music.apple.com/us/song/tell-me/1534028715",
+      "youtube": "https://www.youtube.com/watch?v=PKlQD9NmpXs&list=OLAK5uy_nr6XGlUyq8SA4D3R91U-IWsJK8xGphT7A"
+    }
+  },
+  {
+    "id": 4,
+    "title": "02:20",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2020-10-30",
+    "coverImage": "/src/assets/album-covers/0220.jpg",
+    "genre": "Ambient/Soundtrack",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/1b8vkyRvueJp1gGtwZnLIx?si=4475105b03484869",
+      "applemusic": "https://music.apple.com/us/song/02-20/1534241909",
+      "youtube": "https://www.youtube.com/watch?v=UqCCB00ltYo&list=OLAK5uy_kiTNBvfj_TbRuHt4Dw0brbooahrHySzdc"
+    }
+  },
+  {
+    "id": 5,
+    "title": "Electromania",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2020-10-31",
+    "coverImage": "/src/assets/album-covers/electromania.jpg",
+    "genre": "Electro House/Dubstep",
+    "Type": "Album",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/4DBBE8jjQNK3QwyOGyP2mx?si=e08b4d9b85d04f27",
+      "applemusic": "https://music.apple.com/us/song/nestorin-joulu-feat-severi-boesen/1550718800",
+      "youtube": "https://www.youtube.com/watch?v=wpjK7mFBPE4&list=OLAK5uy_kplZpBrUTBtrn4_zMV-p6WdxRb3XoooWs"
+    }
+  },
+
+  {
+    "id": 6,
+    "title": "Nestorin Joulu (ft. Severi Boesen)",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2020-12-24",
+    "coverImage": "/src/assets/album-covers/nestorinjoulu.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/4DBBE8jjQNK3QwyOGyP2mx?si=e08b4d9b85d04f27",
+      "applemusic": "https://music.apple.com/us/song/nestorin-joulu-feat-severi-boesen/1550718800",
+      "youtube": "https://www.youtube.com/watch?v=wpjK7mFBPE4&list=OLAK5uy_kplZpBrUTBtrn4_zMV-p6WdxRb3XoooWs"
+    }
+  },
+  {
+    "id": 7,
+    "title": "Kolme Kertaa",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2021-02-01",
+    "coverImage": "/src/assets/album-covers/kolmekertaa.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/2hlJzdfIqVWGCBZWwdsPn6?si=5fba08955cc74fc4",
+      "applemusic": "https://music.apple.com/us/song/kolme-kertaa/1554868844",
+      "youtube": "https://www.youtube.com/watch?v=ayBiLCQ3zZc&list=OLAK5uy_kLdprLa5AHe-AmTWzYATy3nBKhPz3XJag"
+    }
+  },
+  {
+    "id": 8,
+    "title": "Keskellä Maailmaa",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2021-11-20",
+    "coverImage": "/src/assets/album-covers/keskellamaailmaa.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/7dhrRUEHlLh0UAGiHbJQfO?si=0dad04f867364f75",
+      "applemusic": "https://music.apple.com/us/song/keskell%C3%A4-maailmaa/1593300976",
+      "youtube": "https://www.youtube.com/watch?v=QZUtnlnv188&list=OLAK5uy_mzjU-q_Y1DpxrYLrEQQsL2-q8PCLsGCA0"
+    }
+  },
+  {
+    "id": 9,
+    "title": "Kaksi",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2021-12-19",
+    "coverImage": "/src/assets/album-covers/kaksi.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/12JPeytaKV9E23I2uZdGwK?si=c5e4f10e05f7488d",
+      "applemusic": "https://music.apple.com/us/song/kaksi/1598245351",
+      "youtube": "https://www.youtube.com/watch?v=QIQn8cOjuAw&list=OLAK5uy_n6mm_i-zur9BvMYqNlPKgErCUu4HO-eh8"
+    }
+  },
+  {
+    "id": 10,
+    "title": "M.E.T.O (ft. Severi Boesen)",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2022-06-22",
+    "coverImage": "/src/assets/album-covers/METO.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/2sVx5Qqj11MeYLiYvah1AM?si=abf901ccd3d54d8a",
+      "applemusic": "https://music.apple.com/us/song/m-e-t-o-feat-severi-boesen/1628043535",
+      "youtube": "https://www.youtube.com/watch?v=lsqlWtwmakE&list=OLAK5uy_mzpfCzPwAZFC6E5Wxl2geQvoUTrBdAoRI"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Sanomattakin Selvää",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2022-08-19",
+    "coverImage": "/src/assets/album-covers/sanomatta.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/43mYokndkRVJv2sZZnFKg3?si=83e07c0b325043c0",
+      "applemusic": "https://music.apple.com/us/song/sanomattakin-selv%C3%A4%C3%A4/1637120018",
+      "youtube": "https://www.youtube.com/watch?v=4y8AtqCFvag&list=OLAK5uy_lI8ygHAvflbN8fMTRWC-8F6NUn9R12nBA"
+    }
+  },
+  {
+    "id": 12,
+    "title": "Snow",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2022-12-25",
+    "coverImage": "/src/assets/album-covers/snow.jpg",
+    "genre": "Ambient/Soundtrack",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/3cdTasnOTGyM3aGsX12lHq?si=b643756ff1b348ee",
+      "applemusic": "https://music.apple.com/us/song/snow/1657249399",
+      "youtube": "https://www.youtube.com/watch?v=guLgSw4sY5U&list=OLAK5uy_k7Rpg7c6Z5_0x1H2I_vFNS2OvGcWYPw20"
+    }
+  },
+  {
+    "id": 13,
+    "title": "Stargazing at Night",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2023-08-21",
+    "coverImage": "/src/assets/album-covers/stargazing.jpg",
+    "genre": "Soundtrack/Orchetral",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/5QnjD1sfWe8Bfl92kEAzaA?si=9381f56f0e94448f",
+      "applemusic": "https://music.apple.com/us/song/stargazing-at-night/1703690720",
+      "youtube": "https://www.youtube.com/watch?v=ePhpFvfpqPM&list=OLAK5uy_lBv0rCbruCXixfTaovQtTh2kUhQMqN_Z4"
+    }
+  },
+  {
+    "id": 14,
+    "title": "Melodies from a time before",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2023-08-31",
+    "coverImage": "/src/assets/album-covers/melodies.jpg",
+    "genre": "Soundtrack/Orchetral",
+    "Type": "Album",
+    "Description": {
+      "en": "The latest album Melodies from a time before is NOW available on streaming platforms!",
+      "fi": "Viimeisin albumi Melodies from a time before on nyt saatavilla striimauspalveluissa!"
+    },
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/album/3ocjs5Rduf44OpbVpe5g1l?si=JRe_nj9mQzmU4AaOuK6eUA",
+      "applemusic": "https://music.apple.com/us/album/melodies-from-a-time-before/1704068383",
+      "youtube": "https://www.youtube.com/watch?v=crpF10DZMOE&list=OLAK5uy_luzPKViPIEWNKsseQ6Va1_jN30YnEvs2M"
+    }
+  },
+  {
+    "id": 15,
+    "title": "Remember",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2023-12-28",
+    "coverImage": "/src/assets/album-covers/remember.jpg",
+    "genre": "Ambient/Soundtrack",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/41l7p8fMzl5mgOBQO4vI8a?si=60a9298e08a64b2b",
+      "applemusic": "https://music.apple.com/us/song/remember/1722782471",
+      "youtube": "https://www.youtube.com/watch?v=-WZS2a_f4V0&list=OLAK5uy_mLq5fdufyud9xFrE03__5S2EUeuJHkKlU"
+    }
+  },
+  {
+    "id": 16,
+    "title": "Aaltoja",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2024-04-12",
+    "coverImage": "/src/assets/album-covers/aaltoja.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/0TyljrnXzi6RzTwbisr03v?si=2f8c25e310a644ee",
+      "applemusic": "https://music.apple.com/us/song/aaltoja/1738156793",
+      "youtube": "https://www.youtube.com/watch?v=zr1_CcwvSck&list=OLAK5uy_lN2M-Yby8UjG7bQ8NCtLMVmwX3APPcwfc"
+    }
+  },
+  {
+    "id": 17,
+    "title": "Halleluja",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2024-11-22",
+    "coverImage": "/src/assets/album-covers/halleluja.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/4EyzwkFnmNTKXng4UvjDJY?si=dc56417c9a5e4c7c",
+      "applemusic": "https://music.apple.com/us/song/halleluja/1778516889",
+      "youtube": "https://www.youtube.com/watch?v=AQSsvGckIFU&list=OLAK5uy_lTgipX5z0q8OoXXgF-jbLFKkfZdYFol0A"
+    }
+  },
+  {
+    "id": 18,
+    "title": "Mikä tää ny on?",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2025-07-7",
+    "coverImage": "/src/assets/album-covers/mika.jpg",
+    "genre": "Electro House/Dubstep",
+    "Type": "Single",
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/4sdwJe4uLNlKxqZCRwwz8h?si=3c7cfabdc34e4724",
+      "applemusic": "https://music.apple.com/us/song/mik%C3%A4-t%C3%A4%C3%A4-ny-on/1820406067",
+      "youtube": "https://www.youtube.com/watch?v=b2Wt4Jc4zFo&list=OLAK5uy_nu_5Vfv8RaemfuTeU8i-xw8qsPRBS0AaU"
+    }
+  },
+  {
+    "id": 19,
+    "title": "Takaisin",
+    "artist": "Aleksi Hakala",
+    "releaseDate": "2025-08-21",
+    "coverImage": "/src/assets/album-covers/takaisin.jpg",
+    "genre": "Pop",
+    "Type": "Single",
+    "Description": {
+      "en": "The fresh single - Takaisin is available NOW on streaming platforms!",
+      "fi": "Tuore sinkku - Takaisin on nyt saatavilla striimauspalveluissa!"
+    },
+    "streamingLinks": {
+      "spotify": "https://open.spotify.com/track/4HLTGYSvvKCcBWbeWi4azS?si=27039a8f79534036",
+      "applemusic": "https://music.apple.com/us/song/takaisin/1824856170",
+      "youtube": "https://www.youtube.com/watch?v=Drz4Xg5U4LM&list=OLAK5uy_moZT1hYdNvnXi6jvuPkyWrdZK_taJPbMs"
+    }
+  }
+]

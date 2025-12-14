@@ -33,7 +33,7 @@ const Contact = ({ language }: ContactProps) => {
   const t = translations[language as keyof typeof translations];
 
   return (
-    <div className="page">
+    <div className="page-contact">
       <h1>{t.title}</h1>
       <div className="contact-content">
         <div className="contact-info">
