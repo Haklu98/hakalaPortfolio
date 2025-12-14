@@ -1,5 +1,13 @@
 .page {
-  padding: 6rem 2rem 2rem 2rem;
+  padding: 2rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.598), rgba(47, 47, 47, 0.683));
 }
 
 .about-content {
@@ -25,7 +33,9 @@
 
 @media (max-width: 768px) {
   .page {
-    padding: 5rem 1rem 1rem 1rem;
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
   
   .about-content {
@@ -36,7 +46,9 @@
 
 @media (max-width: 480px) {
   .page {
-    padding: 5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
   }
   
   .placeholder-image {

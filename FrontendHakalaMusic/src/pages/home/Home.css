@@ -1,17 +1,18 @@
 .page {
-  padding: 6rem 2rem 2rem 2rem;
-  height: 100%;
-}
-
-.page.home {
-  background-image: url('./assets/pianoBG.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  padding: 2rem;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.page.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.598), rgba(47, 47, 47, 0.683));
 }
 
 .hero {
@@ -42,7 +43,7 @@
 
 @media (max-width: 768px) {
   .page {
-    padding: 5rem 1rem 1rem 1rem;
+    padding: 1rem;
   }
   
   .hero {
@@ -67,7 +68,7 @@
 
 @media (max-width: 480px) {
   .page {
-    padding: 5rem 0.5rem 0.5rem 0.5rem;
+    padding: 0.5rem;
   }
   
   .hero h1 {
