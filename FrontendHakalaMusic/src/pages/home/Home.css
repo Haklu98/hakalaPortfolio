@@ -1,11 +1,7 @@
-.page {
+.page-home {
   padding: 2rem;
   display: flex;
-  align-items: center;
-}
-
-.page.home {
-  display: flex;
+  flex-direction: column;
   align-items: center;
   margin: 3rem;
   min-height: 50vh;
@@ -13,9 +9,11 @@
 }
 
 .hero {
-
   text-align: center;
+  align-items: center;
+  justify-content: center;
   padding: 0;
+  width: 90%;
 }
 
 .hero h1 {
@@ -39,12 +37,87 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .page {
-    padding: 1rem;
-  }
+.soundcloud-section {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-  .page.home {
+.soundcloud-embed {
+  margin-top: 2rem;
+  width: 60%;
+}
+
+.soundcloud-attribution {
+  font-size: 10px;
+  color: #cccccc;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 100;
+}
+
+.soundcloud-attribution a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #cccccc;
+  margin: 2rem 0;
+}
+
+.videosection {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.videocontainer {
+  flex: 1;
+}
+
+.videocontainer iframe {
+  width: 100%;
+  height: 315px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .videosection {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .videocontainer iframe {
+    height: 250px;
+  }
+  
+  .soundcloud-embed {
+    width: 100%;
+  }
+}
+
+.videosection {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+
+
+  .page-home {
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -67,6 +140,13 @@
     padding: 0.8rem 1.5rem;
     font-size: 1rem;
   }
+
+  .videosection {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-direction: column;
+  }
 }
 
 @media (max-width: 480px) {
@@ -80,5 +160,12 @@
   
   .hero p {
     font-size: 1rem;
+  }
+
+  .videosection {
+  display: flex;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-direction: column;
   }
 }

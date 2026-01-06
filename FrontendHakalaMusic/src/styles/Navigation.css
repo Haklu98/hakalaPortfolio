@@ -65,20 +65,142 @@
   radius: 1rem;
 }
 
-.lang-button {
+.lang-dropdown {
+  position: relative;
+}
+
+.music-dropdown {
+  position: relative;
+}
+
+.music-dropdown-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: x-large;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.music-dropdown-button:hover {
+  color: #d579faff;
+}
+
+.music-dropdown-button.active {
+  color: #b700ffff;
+  position: relative;
+}
+
+.music-dropdown-button.active::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #b700ffff;
+  box-shadow: 0 0 8px #b700ffff, 0 0 18px #b700ffff;
+  border-radius: 1px;
+}
+
+.music-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  min-width: 200px;
+  z-index: 1001;
+}
+
+.music-dropdown-menu button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.music-dropdown-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #d579faff;
+}
+
+.music-dropdown-menu button.active {
+  color: #b700ffff;
+  background: rgba(183, 0, 255, 0.1);
+}
+
+.lang-dropdown-button {
   background: none;
   border: 1px solid #fff;
   color: #fff;
-  padding: 0.4rem 0.4rem;
+  padding: 0.4rem 0.8rem;
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.9rem;
-  width: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   transition: all 0.3s;
 }
 
-.lang-button:hover {
+.lang-dropdown-button:hover {
   background: rgba(255, 255, 255, 0.48);
+}
+
+.chevron {
+  font-size: 0.7rem;
+  transition: transform 0.3s;
+}
+
+.chevron-up {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 0, 0, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  min-width: 60px;
+  z-index: 1001;
+}
+
+.lang-dropdown-menu button {
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.lang-dropdown-menu button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-dropdown-menu button.active {
+  color: #b700ffff;
+  background: rgba(183, 0, 255, 0.1);
 }
 
 .menu-backdrop {
@@ -125,6 +247,10 @@
     padding: 1rem 0;
     font-size: 1.2rem;
     text-align: center;
+  }
+  
+  .music-dropdown-button {
+    font-size: 1.2rem;
   }
   
   .mobile-social-icons {

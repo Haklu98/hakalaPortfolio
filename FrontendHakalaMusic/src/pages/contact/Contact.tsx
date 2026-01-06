@@ -34,7 +34,9 @@ const Contact = ({ language }: ContactProps) => {
 
   return (
     <div className="page-contact">
+      <section className="hero-banner-contact">
       <h1>{t.title}</h1>
+      <hr className="divider" />
       <div className="contact-content">
         <div className="contact-info">
           <h3>{t.collaborate}</h3>
@@ -49,6 +51,7 @@ const Contact = ({ language }: ContactProps) => {
           <button type="submit">{t.sendButton}</button>
         </form>
       </div>
+      </section>
     </div>
   );
 };
