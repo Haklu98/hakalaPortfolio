@@ -92,10 +92,13 @@
 
 .music-dropdown-button.active {
   color: #b700ffff;
+}
+
+.music-dropdown-button.active .music-text {
   position: relative;
 }
 
-.music-dropdown-button.active::after {
+.music-dropdown-button.active .music-text::after {
   content: '';
   position: absolute;
   bottom: -5px;

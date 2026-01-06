@@ -67,7 +67,7 @@ const Navigation = ({ currentPage, setCurrentPage, language, setLanguage }: Navi
             className={`music-dropdown-button ${(currentPage === 'film-music' || currentPage === 'video-game-music' || currentPage === 'portfolio') ? 'active' : ''}`}
             onClick={() => setIsMusicDropdownOpen(!isMusicDropdownOpen)}
           >
-            {t.music}
+            <span className="music-text">{t.music}</span>
             <FaChevronDown className={`chevron ${isMusicDropdownOpen ? 'chevron-up' : ''}`} />
           </button>
           {isMusicDropdownOpen && (
