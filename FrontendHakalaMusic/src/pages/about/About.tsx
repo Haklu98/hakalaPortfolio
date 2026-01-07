@@ -1,5 +1,6 @@
 import './About.css';
 import myselfImage from '../../assets/myself.jpeg';
+import image2 from '../../assets/ihteni.png';
 
 interface AboutProps {
   language: string;
@@ -88,7 +89,9 @@ const About = ({ language }: AboutProps) => {
           </ul>
         </div>
         <div className="about-image">
+             <img className="artist-image" src={image2} alt="Ihteni Logo" />
           <img className="artist-image" src={myselfImage} alt={t.photo} />
+       
         </div>
       </div>
       </section>

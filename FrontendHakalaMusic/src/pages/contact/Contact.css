@@ -49,6 +49,23 @@
   font-size: 1rem;
 }
 
+.contact-form button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.success-message {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.error-message {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
 .divider {
   border: none;
   height: 1px;
