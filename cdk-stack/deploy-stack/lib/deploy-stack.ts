@@ -30,6 +30,7 @@ export class DeployStack extends cdk.Stack {
         const websiteBucket = new s3.Bucket(this, 'WebsiteBucket', {
             bucketName: bucketName,
             publicReadAccess: true,
+            blockPublicAccess: s3.BlockPublicAccess.BLOCK_ACLS,
             websiteIndexDocument: 'index.html',
             websiteErrorDocument: 'index.html', // Changed to index.html for SPA routing
             removalPolicy: cdk.RemovalPolicy.DESTROY,
