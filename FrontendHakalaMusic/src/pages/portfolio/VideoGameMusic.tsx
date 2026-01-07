@@ -11,13 +11,15 @@ const VideoGameMusic = ({ language }: VideoGameMusicProps) => {
       title: 'Video Game Music',
       text1: 'The collection of my video game music works',
       text2: 'Re-score for Zelda Wind Waker',
-      text3: 'Soundtrack for Broforce clip'
+      text3: 'Soundtrack for Broforce clip',
+      text4: ''
     },
     fi: {
       title: 'Videopelimusiikki',
       text1: 'Kokoelma videopelimusiikkitöistäni',
       text2: 'Sävellys/Re-score Zelda Wind Wakerille',
-      text3: 'Soundtrack Broforce-klipille'
+      text3: 'Soundtrack Broforce-klipille',
+      text4: ''
     }
   };
 

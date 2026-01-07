@@ -256,6 +256,13 @@
     font-size: 1.2rem;
   }
   
+  .lang-dropdown-menu {
+    bottom: 100%;
+    top: auto;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+  
   .mobile-social-icons {
     display: flex;
     justify-content: center;
