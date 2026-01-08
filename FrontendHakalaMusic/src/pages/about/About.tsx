@@ -1,6 +1,6 @@
 import './About.css';
 import myselfImage from '../../assets/myself.jpeg';
-import image2 from '../../assets/ihteni.png';
+import image2 from '../../assets/ihteni.jpg';
 
 interface AboutProps {
   language: string;

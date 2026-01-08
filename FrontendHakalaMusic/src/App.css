@@ -1,6 +1,6 @@
 .app {
   flex-direction: column;
-  background-image: url('./assets/spacebg.jpg');
+  background-image: url('./assets/bg-poster.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -45,6 +45,28 @@
   width: 80%;
   object-fit: contain;
   z-index: 10;
+}
+
+.page-contact,
+.page-home,
+.page {
+  padding: 2rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.598), rgba(47, 47, 47, 0.683));
+}
+
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #cccccc;
+  margin: 2rem 0;
+  width: 100%;
 }
 
 main {

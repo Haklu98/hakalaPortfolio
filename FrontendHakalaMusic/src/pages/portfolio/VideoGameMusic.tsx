@@ -1,5 +1,4 @@
 import './Portfolio.css';
-import './VideoGameMusic.css';
 
 interface VideoGameMusicProps {
   language: string;

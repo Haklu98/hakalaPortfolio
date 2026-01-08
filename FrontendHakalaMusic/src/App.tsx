@@ -3,7 +3,6 @@ import Navigation from './components/navigation';
 import Footer from './components/footer';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
-import Portfolio from './pages/portfolio/Portfolio';
 import FilmMusic from './pages/portfolio/FilmMusic';
 import VideoGameMusic from './pages/portfolio/VideoGameMusic';
 import Contact from './pages/contact/Contact';
@@ -19,7 +18,6 @@ function App() {
   const renderPage = () => {
     switch(currentPage) {
       case 'about': return <About language={language} />;
-      case 'portfolio': return <Portfolio language={language} />;
       case 'film-music': return <FilmMusic language={language} />;
       case 'video-game-music': return <VideoGameMusic language={language} />;
       case 'contact': return <Contact language={language} />;

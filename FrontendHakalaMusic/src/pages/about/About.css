@@ -32,14 +32,6 @@
   border-radius: 10px;
 }
 
-.divider {
-  border: none;
-  height: 1px;
-  background-color: #cccccc;
-  margin: 2rem 0;
-  width: 100%;
-}
-
 .hero-banner-about {
   width: 90%;
   text-align: center;
