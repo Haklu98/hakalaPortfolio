@@ -56,14 +56,6 @@
   margin-top: 1rem;
 }
 
-.divider {
-  border: none;
-  height: 1px;
-  background-color: #cccccc;
-  margin: 2rem 0;
-  width: 100%;
-}
-
 .hero-banner-contact {
   width: 90%;
   text-align: center;

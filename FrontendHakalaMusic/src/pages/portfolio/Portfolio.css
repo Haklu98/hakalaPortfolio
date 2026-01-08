@@ -10,13 +10,6 @@
   line-height: 1.2;
 }
 
-.divider {
-  border: none;
-  height: 1px;
-  background-color: #cccccc;
-  margin: 2rem 0;
-  width: 100%;
-}
 
 .portfolio-links {
   display: flex;
