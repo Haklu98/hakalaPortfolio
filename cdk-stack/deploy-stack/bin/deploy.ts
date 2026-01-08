@@ -4,7 +4,7 @@ import * as cdk from 'aws-cdk-lib';
 import { DeployStack } from '../lib/deploy-stack';
 
 const app = new cdk.App();
-new DeployStack(app, 'DeployStack', {
+new DeployStack(app, 'ComposerSiteStack', {
     env: {
         account: process.env.CDK_DEFAULT_ACCOUNT,
         region: 'us-east-1',

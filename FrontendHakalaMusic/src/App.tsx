@@ -10,6 +10,7 @@ import Contact from './pages/contact/Contact';
 import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaSoundcloud } from 'react-icons/fa';
 import { SiApplemusic } from 'react-icons/si';
 import './App.css';
+import signatureImage from './assets/NimmariUus.png';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -37,7 +38,7 @@ function App() {
           <a href='https://www.youtube.com/@Aleksi_Hakala' target="_blank"><FaYoutube /></a>
           <a href='https://soundcloud.com/aleksihakala' target="_blank"><FaSoundcloud /></a>
         </div>
-        <img src="./src/assets/NimmariUus.png" alt="Signature" className="signature-overlay" />
+        <img src={signatureImage} alt="Signature" className="signature-overlay" />
       </div>
       <Navigation 
         currentPage={currentPage} 

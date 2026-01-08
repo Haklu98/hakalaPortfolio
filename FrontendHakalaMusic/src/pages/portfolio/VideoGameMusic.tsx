@@ -34,11 +34,11 @@ const VideoGameMusic = ({ language }: VideoGameMusicProps) => {
         <div className='videocontainer'>
           <div className='videobox'>
           <p>{t.text2}</p>
-          <iframe src="https://www.youtube.com/embed/e4k7d5lmOUQ?si=I16Nc_z1sBjX0dny" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/e4k7d5lmOUQ?si=I16Nc_z1sBjX0dny" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           </div>
           <div className='videobox'>
             <p>{t.text3}</p>
-            <iframe src="https://www.youtube.com/embed/Whe7QFNL1SQ?si=CFY4DqNpFxtrjnbU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/Whe7QFNL1SQ?si=CFY4DqNpFxtrjnbU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
           </div>
         </div>
       </section>

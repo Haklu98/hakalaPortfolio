@@ -57,12 +57,11 @@ li {
 }
 
 @media (max-width: 768px) {
-  .page {
-    padding: 1rem;
+
+   .page-about {
     margin-left: 1rem;
     margin-right: 1rem;
   }
-  
   .about-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -70,12 +69,6 @@ li {
 }
 
 @media (max-width: 480px) {
-  .page {
-    padding: 0.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-  }
-  
   .placeholder-image {
     padding: 1.5rem;
     font-size: 0.9rem;

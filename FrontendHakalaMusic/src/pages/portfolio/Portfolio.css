@@ -11,6 +11,27 @@
   z-index: 1;
 }
 
+.hero-banner-portfolio h1 {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+  .hero-banner-portfolio h1 {
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner-portfolio h1 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+}
+
 .divider {
   border: none;
   height: 1px;

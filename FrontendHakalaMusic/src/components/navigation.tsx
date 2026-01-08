@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaChevronDown, FaSoundcloud } from 'react-icons/fa';
 import { SiApplemusic } from 'react-icons/si';
 import '../styles/Navigation.css';
