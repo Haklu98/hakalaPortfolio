@@ -47,9 +47,8 @@
   z-index: 10;
 }
 
-.page-contact,
-.page-home,
-.page {
+/* Global page container styles */
+.page, .page-about, .page-contact, .page-home {
   padding: 2rem;
   min-height: 50vh;
   display: flex;
@@ -59,7 +58,6 @@
   margin: 3rem;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.598), rgba(47, 47, 47, 0.683));
 }
-
 
 .divider {
   border: none;
@@ -109,6 +107,12 @@ button {
   body {
     font-size: 14px;
   }
+  
+  .page, .page-about, .page-contact, .page-home {
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
 /* Mobile */
@@ -124,6 +128,12 @@ button {
   .hero-banner {
     height: 60vh;
     background-position: center;
+  }
+  
+  .page, .page-about, .page-contact, .page-home {
+    padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }
 
