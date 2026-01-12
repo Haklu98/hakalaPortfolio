@@ -32,9 +32,31 @@ export class DeployStack extends cdk.Stack {
             publicReadAccess: true,
             blockPublicAccess: s3.BlockPublicAccess.BLOCK_ACLS,
             websiteIndexDocument: 'index.html',
-            websiteErrorDocument: 'index.html', // Changed to index.html for SPA routing
+            websiteErrorDocument: 'index.html',
             removalPolicy: cdk.RemovalPolicy.DESTROY,
             autoDeleteObjects: true,
+        });
+
+        // CloudFront Function for redirect
+        const redirectFunction = new cloudfront.Function(this, 'RedirectFunction', {
+            code: cloudfront.FunctionCode.fromInline(`
+function handler(event) {
+    const request = event.request;
+    const host = request.headers.host.value;
+    
+    if (host === '${DOMAIN_NAME}') {
+        return {
+            statusCode: 301,
+            statusDescription: 'Moved Permanently',
+            headers: {
+                'location': { value: 'https://${fullDomain}' + request.uri }
+            }
+        };
+    }
+    
+    return request;
+}
+            `),
         });
 
         const distribution = new cloudfront.Distribution(this, 'WebsiteDistribution', {
@@ -43,6 +65,10 @@ export class DeployStack extends cdk.Stack {
             defaultBehavior: {
                 origin: new origins.S3Origin(websiteBucket),
                 viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+                functionAssociations: [{
+                    function: redirectFunction,
+                    eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+                }],
             },
             errorResponses: [
                 {
