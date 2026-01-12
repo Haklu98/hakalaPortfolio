@@ -37,27 +37,28 @@ export class DeployStack extends cdk.Stack {
             autoDeleteObjects: true,
         });
 
-        // CloudFront Function for redirect
-        const redirectFunction = new cloudfront.Function(this, 'RedirectFunction', {
-            code: cloudfront.FunctionCode.fromInline(`
+// CloudFront Function for redirect
+const redirectFunction = new cloudfront.Function(this, 'RedirectFunction', {
+    code: cloudfront.FunctionCode.fromInline(`
 function handler(event) {
-    const request = event.request;
-    const host = request.headers.host.value;
+    var request = event.request;
+    var host = request.headers.host.value;
     
-    if (host === '${DOMAIN_NAME}') {
+    if (host === 'hakalamusic.com') {
         return {
             statusCode: 301,
             statusDescription: 'Moved Permanently',
             headers: {
-                'location': { value: 'https://${fullDomain}' + request.uri }
+                'location': { value: 'https://www.hakalamusic.com' + request.uri }
             }
         };
     }
     
     return request;
 }
-            `),
-        });
+    `),
+});
+
 
         const distribution = new cloudfront.Distribution(this, 'WebsiteDistribution', {
             domainNames: [fullDomain, DOMAIN_NAME],
