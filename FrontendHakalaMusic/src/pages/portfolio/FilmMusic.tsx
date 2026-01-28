@@ -11,14 +11,16 @@ const FilmMusic = ({ language }: FilmMusicProps) => {
       text1: 'The collection of my film music works',
       text2: 'Re-score for Star Wars Order 66 Scene',
       text3: 'Soundscape testing for thriller scene',
-      text4: 'More to come!'
+      text4: 'More to come!',
+      indiefilm: 'My entry to Indie Film Music Competition 2026'
     },
     fi: {
       title: 'Elokuvamusiikki',
       text1: 'Kokoelma elokuvamusiikkitöistäni',
       text2: 'Oma sävellys Star Wars Order 66 -kohtaukseen',
       text3: 'Äänimaisematestailua trilleri-kohtaukseen',
-      text4: 'Lisää tulossa!'
+      text4: 'Lisää tulossa!',
+      indiefilm: 'Osallistumiseni Indie Film Music -kilpailuun 2026'
     }
   };
 
@@ -31,6 +33,10 @@ const FilmMusic = ({ language }: FilmMusicProps) => {
         <hr className="divider" />
         <h3>{t.text1}</h3>
         <div className='videocontainer'>
+          <div className='videobox'>
+          <p>{t.indiefilm}</p>
+          <iframe src="https://www.youtube.com/embed/ltHlLidpeoo?si=DjTrGN1wyCHVglme" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+          </div>
           <div className='videobox'>
           <p>{t.text2}</p>
           <iframe src="https://www.youtube.com/embed/d1UwJCHwoUk?si=OHa7A5AC4IOOAZxP" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
