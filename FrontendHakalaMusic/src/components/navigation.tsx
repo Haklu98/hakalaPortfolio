@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaChevronDown, FaSoundcloud } from 'react-icons/fa';
+import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaChevronDown, FaSoundcloud, FaBandcamp } from 'react-icons/fa';
 import { SiApplemusic } from 'react-icons/si';
 import '../styles/Navigation.css';
 import { LuMenu } from "react-icons/lu";
@@ -89,6 +89,7 @@ const Navigation = ({ currentPage, setCurrentPage, language, setLanguage }: Navi
                     <a href='https://www.tiktok.com/@aleksihakalacomposer' target="_blank"><FaTiktok /></a>
                     <a href='https://www.youtube.com/@Aleksi_Hakala' target="_blank"><FaYoutube /></a>
                     <a href='https://soundcloud.com/aleksihakala' target="_blank"><FaSoundcloud /></a>
+                    <a href='https://aleksihakala.bandcamp.com/' target="_blank"><FaBandcamp /></a>
         </li>
         <li className="lang-dropdown">
           <button 

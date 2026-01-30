@@ -33,8 +33,10 @@
 /* Video Styles */
 .videocontainer {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
   justify-items: center;
