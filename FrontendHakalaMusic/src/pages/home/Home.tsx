@@ -47,23 +47,26 @@ const Home = ({ language }: HomeProps) => {
           <p>{t.latest}</p>
           <div className='release-layout'>
             <div className='music-icons-left'>
-              <a href='https://open.spotify.com/track/14uW5vOALXWPd8TzXMLb7j?si=1ebf5ee9502349ee' target="_blank"><FaSpotify /></a>
-              <a href='https://music.apple.com/us/album/bittersweet-goodbyes-single/1869184041' target="_blank"><SiApplemusic /></a>
+              <a href='https://open.spotify.com/track/59PGZ8c3T6ZLJ6YjyWd3iz?si=ba7a601ad70c4c14' target="_blank"><FaSpotify /></a>
+              <a href='https://music.apple.com/us/song/chasing-fireflies/1869885643' target="_blank"><SiApplemusic /></a>
             </div>
             <div className='releaseContainer'>
-              <img src={latestImage} alt="Latest Release" />
+              <img className='release-image' src={latestImage} alt="Latest Release" />
             </div>
             <div className='music-icons-right'>
-              <a href='https://aleksihakala.bandcamp.com/track/bittersweet-goodbyes' target="_blank"><FaBandcamp /></a>
-              <a href='https://soundcloud.com/aleksihakala/bittersweet-goodbyes' target="_blank"><FaSoundcloud /></a>
+              <a href='https://aleksihakala.bandcamp.com/track/chasing-fireflies' target="_blank"><FaBandcamp /></a>
+              <a href='https://soundcloud.com/aleksihakala/chasing-fireflies' target="_blank"><FaSoundcloud /></a>
             </div>
           </div>
-          <p>{t.listen}</p>
+          <div className='listen-now'>
+            <p>{t.listen}</p>
+           <iframe className='bandcamp-embed' src="https://bandcamp.com/EmbeddedPlayer/track=147936536/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://aleksihakala.bandcamp.com/track/chasing-fireflies">Chasing Fireflies by Aleksi Hakala</a></iframe>
+          </div>
           <div className='music-icons-mobile'>
-            <a href='https://open.spotify.com/track/14uW5vOALXWPd8TzXMLb7j?si=1ebf5ee9502349ee' target="_blank"><FaSpotify /></a>
-            <a href='https://music.apple.com/us/album/bittersweet-goodbyes-single/1869184041' target="_blank"><SiApplemusic /></a>
-            <a href='https://aleksihakala.bandcamp.com/track/bittersweet-goodbyes' target="_blank"><FaBandcamp /></a>
-            <a href='https://soundcloud.com/aleksihakala/bittersweet-goodbyes' target="_blank"><FaSoundcloud /></a>
+            <a href='https://open.spotify.com/track/59PGZ8c3T6ZLJ6YjyWd3iz?si=ba7a601ad70c4c14' target="_blank"><FaSpotify /></a>
+            <a href='https://music.apple.com/us/song/chasing-fireflies/1869885643' target="_blank"><SiApplemusic /></a>
+            <a href='https://aleksihakala.bandcamp.com/track/chasing-fireflies' target="_blank"><FaBandcamp /></a>
+            <a href='https://soundcloud.com/aleksihakala/chasing-fireflies' target="_blank"><FaSoundcloud /></a>
           </div>
         </div>
       <hr className="divider" />
