@@ -69,7 +69,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  jistify-content: center;
+  justify-content: center;
   align-items: center;
 }
 
