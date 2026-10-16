@@ -11,10 +11,23 @@ import './App.css';
 import signatureImage from './assets/NimmariUus.png';
 import { PAGE_PATHS, PAGE_TITLES, SITE_URL, pageFromPath, type Page } from './routes';
 
+// Selain muistaa kävijän valitseman kielen seuraavalla käynnillä
+const LANGUAGE_KEY = 'hakalamusic-language';
+
+function loadSavedLanguage(): string {
+  try {
+    const saved = localStorage.getItem(LANGUAGE_KEY);
+    if (saved === 'en' || saved === 'fi') return saved;
+  } catch {
+    // Esim. yksityinen selaus voi estää tallennuksen – käytetään oletuskieltä
+  }
+  return 'en';
+}
+
 function App() {
   // Aloitussivu luetaan osoiteriviltä, esim. /contact avaa suoraan yhteystiedot
   const [currentPage, setCurrentPage] = useState<Page>(() => pageFromPath(window.location.pathname));
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState(loadSavedLanguage);
 
   useEffect(() => {
     // Siistitään osoite: "/about/" -> "/about", tuntematon osoite -> "/"
@@ -39,6 +52,15 @@ function App() {
     document.querySelector('link[rel="canonical"]')?.setAttribute('href', pageUrl);
     document.querySelector('meta[property="og:url"]')?.setAttribute('content', pageUrl);
   }, [currentPage, language]);
+
+  const changeLanguage = (lang: string) => {
+    setLanguage(lang);
+    try {
+      localStorage.setItem(LANGUAGE_KEY, lang);
+    } catch {
+      // Jos tallennus ei onnistu, kieli vaihtuu silti tämän käynnin ajaksi
+    }
+  };
 
   // Siirtyy toiselle sivulle ja vaihtaa osoiterivin vastaamaan sitä
   const navigate = (page: Page) => {
@@ -70,7 +92,7 @@ function App() {
         currentPage={currentPage}
         onNavigate={navigate}
         language={language}
-        setLanguage={setLanguage}
+        setLanguage={changeLanguage}
       />
       <main>
         {renderPage()}
