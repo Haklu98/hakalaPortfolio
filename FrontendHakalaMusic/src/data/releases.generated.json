@@ -1,0 +1,334 @@
+{
+  "generatedAt": "2026-10-16T12:49:41.864Z",
+  "releases": [
+    {
+      "id": "6782177755",
+      "title": "Yearning",
+      "releaseDate": "2026-06-30",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ac/3f/46/ac3f4601-055d-eee0-251e-8e57dcfab3a1/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/yearning-single/6782177755",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/yearning"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 3495753063
+      }
+    },
+    {
+      "id": "1895970312",
+      "title": "心の痛み / Pain of the Soul",
+      "releaseDate": "2026-05-06",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5a/f7/cc/5af7cc1d-043d-88e1-9660-cd99cf2e8e12/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/%E5%BF%83%E3%81%AE%E7%97%9B%E3%81%BF-pain-of-the-soul-single/1895970312",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/pain-of-the-soul-2"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 1327734514
+      }
+    },
+    {
+      "id": "6764665763",
+      "title": "Fog of War",
+      "releaseDate": "2026-04-30",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2e/ab/a6/2eaba65e-8584-2534-9b52-b849ba4259e8/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/fog-of-war-single/6764665763",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/fog-of-war"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 1994299489
+      }
+    },
+    {
+      "id": "1870823613",
+      "title": "Beneath the Surface",
+      "releaseDate": "2026-03-05",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d5/7f/ec/d57fecf5-9cc8-cff2-9f51-c35a747b4b1a/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/4VtCGUct2PUxax5LouEJz6",
+        "appleMusic": "https://music.apple.com/fi/album/beneath-the-surface-single/1870823613",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/beneath-the-surface"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 1443146745
+      }
+    },
+    {
+      "id": "1870439134",
+      "title": "Gold and Sanguine",
+      "releaseDate": "2026-02-25",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bc/11/fb/bc11fbe0-ddac-75ae-bb58-ebecccf4cad1/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/5GCjU70eNosWM6xg4ekhLm",
+        "appleMusic": "https://music.apple.com/fi/album/gold-and-sanguine-single/1870439134",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/gold-and-sanguine"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 45447866
+      }
+    },
+    {
+      "id": "1870392379",
+      "title": "Helios",
+      "releaseDate": "2026-02-18",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/08/d8/ae/08d8ae2c-6758-306c-8dd9-e9732d0b22bd/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/5fnqy0gY43XjBvnwPqAGxp",
+        "appleMusic": "https://music.apple.com/fi/album/helios-single/1870392379",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/helios"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 80218807
+      }
+    },
+    {
+      "id": "1877442546",
+      "title": "Hope in the Stars",
+      "releaseDate": "2026-02-10",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d6/e2/8b/d6e28bf6-b275-2819-737c-068a7fbab141/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/hope-in-the-stars-single/1877442546",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/hope-in-the-stars"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 2756013600
+      }
+    },
+    {
+      "id": "1869885642",
+      "title": "Chasing Fireflies",
+      "releaseDate": "2026-02-04",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/20/d3/69/20d3696b-1f67-aa02-05fa-359b9878f7bb/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/3QPy4LwMR3BnkzbYr2wkwa",
+        "appleMusic": "https://music.apple.com/fi/album/chasing-fireflies-single/1869885642",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/chasing-fireflies",
+        "soundcloud": "https://soundcloud.com/aleksihakala/chasing-fireflies"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 147936536
+      }
+    },
+    {
+      "id": "1869184041",
+      "title": "Bittersweet Goodbyes",
+      "releaseDate": "2026-01-28",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/db/0e/73/db0e7352-6fa7-d22e-70d9-955dcab3551f/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/bittersweet-goodbyes-single/1869184041",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/bittersweet-goodbyes"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 585162623
+      }
+    },
+    {
+      "id": "1867882764",
+      "title": "Fall from Grace",
+      "releaseDate": "2026-01-23",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/43/0d/1d/430d1d7a-68ec-e327-8655-8a7ab75c7dd1/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/5IUuX6OOTOHV9dxxBaUHoq",
+        "appleMusic": "https://music.apple.com/fi/album/fall-from-grace-single/1867882764",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/fall-from-grace"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 1877065
+      }
+    },
+    {
+      "id": "1820406066",
+      "title": "Mikä tää ny on?",
+      "releaseDate": "2025-07-07",
+      "year": "2025",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/38/78/33/387833c4-08ba-61d4-517c-d8003cfbe94f/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/mik%C3%A4-t%C3%A4%C3%A4-ny-on-single/1820406066"
+      },
+      "linksChecked": false,
+      "bandcampItem": null
+    },
+    {
+      "id": "1722782470",
+      "title": "Remember",
+      "releaseDate": "2023-12-28",
+      "year": "2023",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bd/8d/e1/bd8de1c2-bbef-497f-2524-805be9f974d2/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/09ISALmKO0zpwbzxQ2NJb2",
+        "appleMusic": "https://music.apple.com/fi/album/remember-single/1722782470",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/remember"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 2059619436
+      }
+    },
+    {
+      "id": "1704068383",
+      "title": "Melodies from a Time Before",
+      "releaseDate": "2023-08-31",
+      "year": "2023",
+      "type": "album",
+      "trackCount": 10,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/12/dd/60/12dd609b-e49c-4e0f-a7c2-539d447e533e/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/3ocjs5Rduf44OpbVpe5g1l",
+        "appleMusic": "https://music.apple.com/fi/album/melodies-from-a-time-before/1704068383",
+        "bandcamp": "https://aleksihakala.bandcamp.com/album/melodies-from-a-time-before"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "album",
+        "id": 933380685
+      }
+    },
+    {
+      "id": "1703690718",
+      "title": "Stargazing at Night",
+      "releaseDate": "2023-08-21",
+      "year": "2023",
+      "type": "ep",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/6d/e0/46/6de0468c-8cbe-75c2-fa2b-e847ff13272c/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/02XbviqWzRfaPELJdpAEPE",
+        "appleMusic": "https://music.apple.com/fi/album/stargazing-at-night-ep/1703690718"
+      },
+      "linksChecked": false,
+      "bandcampItem": null
+    },
+    {
+      "id": "1657249398",
+      "title": "Snow",
+      "releaseDate": "2022-12-25",
+      "year": "2022",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/bf/80/72/bf80726e-636b-b9b1-9725-5c532f4d7674/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/1qheT7QcQ4iZ5TGHp8JTs3",
+        "appleMusic": "https://music.apple.com/fi/album/snow-single/1657249398",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/snow"
+      },
+      "linksChecked": false,
+      "bandcampItem": {
+        "type": "track",
+        "id": 431038968
+      }
+    },
+    {
+      "id": "1641294043",
+      "title": "Living in the Dream (feat. Aleksi Hakala)",
+      "releaseDate": "2022-09-13",
+      "year": "2022",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/fb/44/20/fb442036-4c5a-81d6-2a64-c0452c6653cb/196925570077.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/living-in-the-dream-feat-aleksi-hakala-single/1641294043"
+      },
+      "linksChecked": false,
+      "bandcampItem": null
+    },
+    {
+      "id": "1862092739",
+      "title": "Electromania",
+      "releaseDate": "2020-11-20",
+      "year": "2020",
+      "type": "album",
+      "trackCount": 8,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b9/3e/ef/b93eefe0-4c5e-d3b7-f184-68b8fd806f01/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "spotify": "https://open.spotify.com/album/0H8QJEt1EzjFAlb6PqVztZ",
+        "appleMusic": "https://music.apple.com/fi/album/electromania/1862092739"
+      },
+      "linksChecked": false,
+      "bandcampItem": null
+    },
+    {
+      "id": "1534241908",
+      "title": "02:20",
+      "releaseDate": "2020-10-30",
+      "year": "2020",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/52/c9/b0/52c9b00f-6d27-9409-6b62-640c548b77bb/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/02-20-single/1534241908"
+      },
+      "linksChecked": false,
+      "bandcampItem": null
+    },
+    {
+      "id": "1534028714",
+      "title": "Tell Me",
+      "releaseDate": "2020-10-05",
+      "year": "2020",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/f6/af/3f/f6af3f8c-1245-8fa3-43a2-b781796d0419/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/tell-me-single/1534028714"
+      },
+      "linksChecked": false,
+      "bandcampItem": null
+    }
+  ]
+}
