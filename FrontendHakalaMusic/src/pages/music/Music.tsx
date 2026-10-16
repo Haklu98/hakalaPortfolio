@@ -139,7 +139,7 @@ const Music = ({ language }: MusicProps) => {
           <iframe
             title="Aleksi Hakala Collection – SoundCloud player"
             loading="lazy"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2183078540&color=%238d0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&theme=dark"
+            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2183078540&color=%23a8321a&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&theme=dark"
           ></iframe>
           <div className="soundcloud-attribution">
             <a href="https://soundcloud.com/aleksihakala" title="Aleksi Hakala" target="_blank" rel="noopener noreferrer">Aleksi Hakala</a> · <a href="https://soundcloud.com/aleksihakala/sets/aleksi-hakala-collection" title="Aleksi Hakala Collection" target="_blank" rel="noopener noreferrer">Aleksi Hakala Collection</a>

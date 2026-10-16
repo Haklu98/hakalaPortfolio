@@ -93,7 +93,7 @@
 
 .release-link:hover {
   color: var(--color-text);
-  background-color: rgba(238, 235, 229, 0.05);
+  background-color: var(--color-hover-tint);
 }
 
 .release-link-icon {
@@ -119,7 +119,7 @@
 /* Valittu palvelu syttyy nimikirjoituksen neonhehkuun */
 .release-link:hover .release-link-action,
 .release-link:focus-visible .release-link-action {
-  color: #ffffff;
+  color: var(--color-on-accent);
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   box-shadow: var(--accent-glow);
