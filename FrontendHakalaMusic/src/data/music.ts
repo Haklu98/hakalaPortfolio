@@ -1,14 +1,21 @@
-// Musiikki-sivun sisältö yhdessä paikassa.
-// Uuden julkaisun tai videon lisääminen: kopioi olemassa oleva rivi ja vaihda tiedot.
-// Järjestys sivulla on sama kuin tässä tiedostossa (uusin ensin).
+// Musiikki-sivun sisältö.
+//
+// JULKAISUT haetaan automaattisesti Applen julkisesta musiikkihausta (ja muiden palveluiden linkit Songportista ja Bandcampista)
+// komennolla `npm run releases`, jonka build-upload-skripti ajaa ennen julkaisua. Haetut tiedot ovat
+// tiedostossa releases.generated.json – sitä ei tarvitse muokata käsin.
+// Tässä tiedostossa voit piilottaa julkaisuja ja korjata tai täydentää haettuja tietoja.
+//
+// VIDEOT lisätään käsin: kopioi olemassa oleva rivi ja vaihda tiedot.
 
+import generated from './releases.generated.json';
 import chasingFirefliesCover from '../assets/latest.jpg';
 
 export interface Release {
   title: string;
   year?: string;                          // esim. '2026'
   type?: { en: string; fi: string };      // esim. { en: 'Single', fi: 'Single' } tai { en: 'Album', fi: 'Albumi' }
-  cover?: string;                         // kansikuvan osoite tai tuotu kuva, ks. ohje alla
+  cover?: string;                         // kansikuvan osoite tai projektiin tuotu kuva
+  bandcampPlayer?: string;                // Bandcamp-soittimen osoite (etusivun uusimmalle julkaisulle)
   links: {
     spotify?: string;
     appleMusic?: string;
@@ -23,71 +30,98 @@ export interface Video {
   note?: { en: string; fi: string };      // vapaaehtoinen lisätieto, esim. rooli tai kokoonpano
 }
 
-// Kansikuvat: cover on joko Spotifyn kuvaosoite (https://i.scdn.co/image/...)
-// tai projektiin tallennettu kuva, joka tuodaan tiedoston alussa kuten chasingFirefliesCover.
-// Ilman kansikuvaa, tai jos kuva ei lataudu, julkaisu näkyy tyylikkäänä nimiruutuna.
-export const RELEASES: Release[] = [
-  {
-    title: 'Chasing Fireflies',
-    cover: chasingFirefliesCover,
-    links: {
-      spotify: 'https://open.spotify.com/track/59PGZ8c3T6ZLJ6YjyWd3iz',
-      appleMusic: 'https://music.apple.com/us/song/chasing-fireflies/1869885643',
-      bandcamp: 'https://aleksihakala.bandcamp.com/track/chasing-fireflies',
-      soundcloud: 'https://soundcloud.com/aleksihakala/chasing-fireflies',
-    },
-  },
-  {
-    title: 'Beneath the Surface',
-    cover: 'https://image-cdn-ak.spotifycdn.com/image/ab67616d0000b273b6c64930609219579e6a865d',
-    links: { spotify: 'https://open.spotify.com/album/4VtCGUct2PUxax5LouEJz6' },
-  },
-  {
-    title: 'Gold and Sanguine',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273cf607fc24879231a9b1c1005',
-    links: { spotify: 'https://open.spotify.com/album/5GCjU70eNosWM6xg4ekhLm' },
-  },
-  {
-    title: 'Fall from Grace',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b27393518bfd5401c06150c25c5f',
-    links: { spotify: 'https://open.spotify.com/album/5IUuX6OOTOHV9dxxBaUHoq' },
-  },
+// Julkaisut, joita ei näytetä tällä sivulla (esim. suomenkieliset HAKALA-julkaisut).
+// Kirjoita nimi täsmälleen kuten se näkyy sivulla.
+const HIDDEN_RELEASES: string[] = [
+  'Aaltoja',
+  'Mikä tää ny on?',
+  'Living in the Dream (feat. Aleksi Hakala)',
+  '02:20',
+  'Tell Me',
+];
+
+// Käsin tehdyt korjaukset ja lisäykset. Nämä voittavat aina automaattisen haun.
+// Avaimena julkaisun nimi täsmälleen kuten se näkyy sivulla. Esimerkiksi puuttuva linkki:
+//   'Helios': { links: { bandcamp: 'https://aleksihakala.bandcamp.com/album/helios' } },
+const RELEASE_OVERRIDES: Record<string, Partial<Omit<Release, 'title' | 'links'>> & { links?: Release['links'] }> = {
+  'Chasing Fireflies': { cover: chasingFirefliesCover },
+  // Spotify-linkit, joita automaattinen haku ei löytänyt (Songport-avainta odotellessa)
+  'Yearning': { links: { spotify: 'https://open.spotify.com/album/1hqj66rJI6ekNujTmnh8ix' } },
+  '心の痛み / Pain of the Soul': { links: { spotify: 'https://open.spotify.com/album/206F8iz8DM5AhFiaB7kfbB' } },
+  'Fog of War': { links: { spotify: 'https://open.spotify.com/album/6xmGMGGdMJ5OshK37eJfVb' } },
+  'Hope in the Stars': { links: { spotify: 'https://open.spotify.com/album/17fBDqoKxTyFeOYO3T6yuC' } },
+  'Bittersweet Goodbyes': { links: { spotify: 'https://open.spotify.com/album/4TBHmf6KDn1HKelgDOvxOc' } },
+};
+
+const TYPE_LABELS: Record<string, { en: string; fi: string }> = {
+  single: { en: 'Single', fi: 'Single' },
+  ep: { en: 'EP', fi: 'EP' },
+  album: { en: 'Album', fi: 'Albumi' },
+  compilation: { en: 'Compilation', fi: 'Kokoelma' },
+};
+
+interface GeneratedRelease {
+  title: string;
+  releaseDate: string | null;
+  year: string | null;
+  type: string | null;
+  cover: string | null;
+  links: Partial<Record<string, string>>;
+  bandcampItem?: { type: string; id: number } | null;
+}
+
+function bandcampPlayerUrl(item: GeneratedRelease['bandcampItem']): string | undefined {
+  if (!item) return undefined;
+  return `https://bandcamp.com/EmbeddedPlayer/${item.type}=${item.id}/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/`;
+}
+
+// Julkaisut, joita ei ole Apple Musicissa (automaattinen haku ei siksi löydä niitä). Lisätään käsin.
+// releaseDate järjestää julkaisun oikeaan kohtaan muiden joukossa (muoto '2024-05-31').
+// type on 'single', 'ep', 'album' tai 'compilation'; null jättää tyypin näyttämättä.
+const EXTRA_RELEASES: GeneratedRelease[] = [
   {
     title: 'The Dark Nine',
+    releaseDate: '2026-04-02',
+    year: '2026',
+    type: 'single',
     cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273c4c3e9426978b5acd5b29343',
-    links: { spotify: 'https://open.spotify.com/album/2fdbs8zpuQzNAgHvz7tl57' },
-  },
-  {
-    title: 'Helios',
-    cover: 'https://image-cdn-ak.spotifycdn.com/image/ab67616d0000b273be14a53d04c732ca92763e39',
-    links: { spotify: 'https://open.spotify.com/album/5fnqy0gY43XjBvnwPqAGxp' },
-  },
-  {
-    title: 'Melodies from a Time Before',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273ba5275281ab96202cbb2a24a',
-    links: { spotify: 'https://open.spotify.com/album/3ocjs5Rduf44OpbVpe5g1l' },
-  },
-  {
-    title: 'Stargazing at Night',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b2731cb5fe16d53a325dc53c5667',
-    links: { spotify: 'https://open.spotify.com/album/02XbviqWzRfaPELJdpAEPE' },
-  },
-  {
-    title: 'Remember',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273c2e2bbef4375ed91de9c6d4d',
-    links: { spotify: 'https://open.spotify.com/album/09ISALmKO0zpwbzxQ2NJb2' },
-  },
-  {
-    title: 'Snow',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273a33bb5987c15daf7f4598118',
-    links: { spotify: 'https://open.spotify.com/album/1qheT7QcQ4iZ5TGHp8JTs3' },
-  },
-  {
-    title: 'Electromania',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273e8eced2a19d40a89a906fa9b',
-    links: { spotify: 'https://open.spotify.com/album/0H8QJEt1EzjFAlb6PqVztZ' },
+    links: {
+      spotify: 'https://open.spotify.com/album/2fdbs8zpuQzNAgHvz7tl57',
+      bandcamp: 'https://aleksihakala.bandcamp.com/track/the-dark-nine',
+    },
+    bandcampItem: { type: 'track', id: 3427952782 }, // Bandcamp-soittimen tunnus
   },
 ];
+
+// Uusin ensin; julkaisut ilman päivämäärää listan loppuun
+export const RELEASES: Release[] = [...(generated.releases as GeneratedRelease[]), ...EXTRA_RELEASES]
+  .sort((a, b) => (b.releaseDate ?? '').localeCompare(a.releaseDate ?? ''))
+  .filter((release) => !HIDDEN_RELEASES.includes(release.title))
+  .map((release) => {
+    const override = RELEASE_OVERRIDES[release.title] ?? {};
+    return {
+      title: release.title,
+      year: release.year ?? release.releaseDate?.slice(0, 4) ?? undefined,
+      type: release.type ? TYPE_LABELS[release.type] : undefined,
+      cover: release.cover ?? undefined,
+      bandcampPlayer: bandcampPlayerUrl(release.bandcampItem),
+      ...override,
+      links: {
+        spotify: release.links.spotify,
+        appleMusic: release.links.appleMusic,
+        bandcamp: release.links.bandcamp,
+        soundcloud: release.links.soundcloud,
+        ...override.links,
+      },
+    };
+  });
+
+// Etusivun "Uusin julkaisu" on automaattisesti listan uusin.
+// Jos haluat nostaa etusivulle jonkin muun, kirjoita sen nimi tähän (esim. 'Helios'); null = uusin.
+const FEATURED_RELEASE: string | null = null;
+
+export const LATEST_RELEASE: Release | undefined =
+  (FEATURED_RELEASE ? RELEASES.find((release) => release.title === FEATURED_RELEASE) : undefined) ?? RELEASES[0];
 
 export const FILM_WORKS: Video[] = [
   {

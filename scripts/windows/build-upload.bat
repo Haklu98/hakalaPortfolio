@@ -6,6 +6,11 @@ echo Building and uploading React app...
 REM Navigate to frontend directory
 cd ..\..\FrontendHakalaMusic
 
+REM Fetch the latest releases from Apple Music, Songport and Bandcamp
+REM (if this fails, the previously fetched releases are used and the build continues)
+echo Fetching latest releases...
+call npm run releases
+
 REM Build the React application
 echo Building React application...
 call npm run build
@@ -44,4 +49,4 @@ if not "%DIST_ID%"=="" (
 )
 
 echo Deployment complete!
-pause
+pause

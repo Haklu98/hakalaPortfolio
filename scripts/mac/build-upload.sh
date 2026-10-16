@@ -6,6 +6,11 @@ echo "Building and uploading React app..."
 # Navigate to frontend directory
 cd ../../FrontendHakalaMusic
 
+# Fetch the latest releases from Apple Music, Songport and Bandcamp
+# (if this fails, the previously fetched releases are used and the build continues)
+echo "Fetching latest releases..."
+npm run releases
+
 # Build the React application
 echo "Building React application..."
 npm run build
@@ -33,4 +38,4 @@ else
     echo "No CloudFront distribution found"
 fi
 
-echo "Deployment complete!"
+echo "Deployment complete!"
