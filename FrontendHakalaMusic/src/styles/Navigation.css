@@ -130,26 +130,40 @@
   z-index: 1001;
 }
 
-.music-dropdown-menu button {
+/* Musiikki-valikon alasivut ovat linkkejä, jotta niillä on oma osoite.
+   .nav-links-etuliite varmistaa, että nämä tyylit voittavat yleiset linkkityylit
+   myös mobiilinäkymässä, joten ulkoasu pysyy ennallaan. */
+.nav-links .music-dropdown-menu a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
   background: none;
   border: none;
   color: #fff;
   padding: 0.75rem 1rem;
+  margin: 0;
   cursor: pointer;
   width: 100%;
   text-align: left;
   font-size: 1rem;
+  font-weight: 500;
+  line-height: normal;
   transition: background 0.3s;
 }
 
-.music-dropdown-menu button:hover {
+.nav-links .music-dropdown-menu a:hover {
   background: rgba(255, 255, 255, 0.1);
   color: #d579faff;
 }
 
-.music-dropdown-menu button.active {
+.nav-links .music-dropdown-menu a.active {
   color: #b700ffff;
   background: rgba(183, 0, 255, 0.1);
+}
+
+/* Ei hehkuvaa alaviivaa valikon sisällä (sitä käytetään vain päävalikossa) */
+.nav-links .music-dropdown-menu a.active::after {
+  content: none;
 }
 
 .lang-dropdown-button {

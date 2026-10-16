@@ -1,139 +1,97 @@
-import { useState } from 'react';
-import emailjs from '@emailjs/browser';
+import { useEffect, useRef, useState } from 'react';
+import { FaEnvelope, FaRegCopy, FaCheck } from 'react-icons/fa';
 import './Contact.css';
 
 interface ContactProps {
   language: string;
 }
 
+// Sähköpostiosoite on yhdessä paikassa, jotta sen vaihtaminen on helppoa.
+const EMAIL_ADDRESS = 'artistihakala@gmail.com';
+
 const Contact = ({ language }: ContactProps) => {
-  const [formData, setFormData] = useState({
-    title: '',
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState('');
+  // Näytetäänkö "Kopioitu!" -teksti hetken kopioinnin jälkeen
+  const [copyStatus, setCopyStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
+  const resetTimer = useRef<number | undefined>(undefined);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
+  // Siivotaan ajastin pois, jos kävijä siirtyy toiselle sivulle kesken
+  useEffect(() => () => window.clearTimeout(resetTimer.current), []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitStatus('');
-
-    try {
-      await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          title: formData.title,
-          message: formData.message,
-          to_email: 'artistihakala@gmail.com'
-        },
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      );
-      
-      setSubmitStatus('success');
-      setFormData({ title: '', name: '', email: '', message: '' });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
   const translations = {
     en: {
       title: 'Contact Me',
       collaborate: "Let's Collaborate",
-      email: 'Email: artistihakala@gmail.com',
-      location: 'Based in: Finland',
-      titlePlaceholder: 'Subject',
-      namePlaceholder: 'Your Name',
-      emailPlaceholder: 'Your Email',
-      messagePlaceholder: 'Your Message',
-      sendButton: 'Send Message',
-      sending: 'Sending...',
-      successMessage: 'Message sent successfully!',
-      errorMessage: 'Failed to send message. Please try again.'
+      intro: 'Tell me about your project: the style, the schedule and where the music will be used.',
+      location: 'Based in Finland',
+      emailButton: 'Send an email',
+      copyButton: 'Copy address',
+      copied: 'Copied!',
+      copyFailed: 'Copying failed – select the address above',
+      subject: 'Inquiry via hakalamusic.com'
     },
     fi: {
       title: 'Ota Yhteyttä',
       collaborate: 'Tehdään Yhteistyötä',
-      email: 'Sähköposti: artistihakala@gmail.com',
+      intro: 'Kerro projektistasi: tyylilaji, aikataulu ja mihin musiikki tulee.',
       location: 'Sijainti: Suomi',
-      titlePlaceholder: 'Aihe',
-      namePlaceholder: 'Nimesi',
-      emailPlaceholder: 'Sähköpostisi',
-      messagePlaceholder: 'Viestisi',
-      sendButton: 'Lähetä Viesti',
-      sending: 'Lähetetään...',
-      successMessage: 'Viesti lähetetty onnistuneesti!',
-      errorMessage: 'Viestin lähetys epäonnistui. Yritä uudelleen.'
+      emailButton: 'Lähetä sähköpostia',
+      copyButton: 'Kopioi osoite',
+      copied: 'Kopioitu!',
+      copyFailed: 'Kopiointi ei onnistunut – valitse osoite yltä',
+      subject: 'Yhteydenotto hakalamusic.com-sivuston kautta'
     }
   };
 
   const t = translations[language as keyof typeof translations];
 
+  // Avaa kävijän oman sähköpostiohjelman, aiherivi valmiiksi täytettynä
+  const mailtoLink = `mailto:${EMAIL_ADDRESS}?subject=${encodeURIComponent(t.subject)}`;
+
+  // Kopioi osoitteen leikepöydälle (hyödyllinen esim. Gmailia selaimessa käyttäville)
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL_ADDRESS);
+      setCopyStatus('copied');
+    } catch {
+      setCopyStatus('failed');
+    }
+    window.clearTimeout(resetTimer.current);
+    resetTimer.current = window.setTimeout(() => setCopyStatus('idle'), 2500);
+  };
+
   return (
     <div className="page-contact">
       <section className="hero-banner-contact">
-      <h1>{t.title}</h1>
-      <hr className="divider" />
-      <div className="contact-content">
-        <div className="contact-info">
+        <h1>{t.title}</h1>
+        <hr className="divider" />
+        <div className="contact-card">
           <h3>{t.collaborate}</h3>
-          <p>{t.email}</p>
-          <p>{t.location}</p>
+          <p className="contact-intro">{t.intro}</p>
+
+          <p className="contact-address">{EMAIL_ADDRESS}</p>
+
+          <div className="contact-actions">
+            <a className="contact-button contact-button-primary" href={mailtoLink}>
+              <FaEnvelope aria-hidden="true" />
+              <span>{t.emailButton}</span>
+            </a>
+            <button
+              type="button"
+              className={`contact-button contact-button-secondary ${copyStatus === 'copied' ? 'is-copied' : ''}`}
+              onClick={handleCopy}
+            >
+              {copyStatus === 'copied' ? <FaCheck aria-hidden="true" /> : <FaRegCopy aria-hidden="true" />}
+              <span>{copyStatus === 'copied' ? t.copied : t.copyButton}</span>
+            </button>
+          </div>
+
+          {/* Ruudunlukijat kertovat tämän viestin ääneen */}
+          <p className="contact-copy-status" aria-live="polite">
+            {copyStatus === 'failed' ? t.copyFailed : ''}
+          </p>
+
+          <p className="contact-location">{t.location}</p>
         </div>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <input 
-            type="text" 
-            name="title"
-            placeholder={t.titlePlaceholder} 
-            value={formData.title}
-            onChange={handleInputChange}
-            required 
-          />
-          <input 
-            type="text" 
-            name="name"
-            placeholder={t.namePlaceholder} 
-            value={formData.name}
-            onChange={handleInputChange}
-            required 
-          />
-          <input 
-            type="email" 
-            name="email"
-            placeholder={t.emailPlaceholder} 
-            value={formData.email}
-            onChange={handleInputChange}
-            required 
-          />
-          <textarea 
-            name="message"
-            placeholder={t.messagePlaceholder} 
-            rows={5} 
-            value={formData.message}
-            onChange={handleInputChange}
-            required
-          ></textarea>
-          <button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? t.sending : t.sendButton}
-          </button>
-          {submitStatus === 'success' && <p className="success-message">{t.successMessage}</p>}
-          {submitStatus === 'error' && <p className="error-message">{t.errorMessage}</p>}
-        </form>
-      </div>
       </section>
     </div>
   );

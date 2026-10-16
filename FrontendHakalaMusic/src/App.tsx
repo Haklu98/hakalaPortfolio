@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navigation from './components/navigation';
 import Footer from './components/footer';
 import Home from './pages/home/Home';
@@ -10,10 +10,44 @@ import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaSoundcloud, FaBandcamp }
 import { SiApplemusic } from 'react-icons/si';
 import './App.css';
 import signatureImage from './assets/NimmariUus.png';
+import { PAGE_PATHS, PAGE_TITLES, SITE_URL, pageFromPath, type Page } from './routes';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  // Aloitussivu luetaan osoiteriviltä, esim. /contact avaa suoraan yhteystiedot
+  const [currentPage, setCurrentPage] = useState<Page>(() => pageFromPath(window.location.pathname));
   const [language, setLanguage] = useState('en');
+
+  useEffect(() => {
+    // Siistitään osoite: "/about/" -> "/about", tuntematon osoite -> "/"
+    const correctPath = PAGE_PATHS[pageFromPath(window.location.pathname)];
+    if (window.location.pathname !== correctPath) {
+      window.history.replaceState(null, '', correctPath + window.location.search + window.location.hash);
+    }
+
+    // Selaimen takaisin- ja eteenpäin-painikkeet
+    const handleBackForward = () => setCurrentPage(pageFromPath(window.location.pathname));
+    window.addEventListener('popstate', handleBackForward);
+    return () => window.removeEventListener('popstate', handleBackForward);
+  }, []);
+
+  // Päivitetään välilehden otsikko, sivun kieli ja hakukoneille kerrottu osoite
+  useEffect(() => {
+    const titles = PAGE_TITLES[language] ?? PAGE_TITLES.en;
+    document.title = titles[currentPage];
+    document.documentElement.lang = language;
+
+    const pageUrl = SITE_URL + PAGE_PATHS[currentPage];
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', pageUrl);
+    document.querySelector('meta[property="og:url"]')?.setAttribute('content', pageUrl);
+  }, [currentPage, language]);
+
+  // Siirtyy toiselle sivulle ja vaihtaa osoiterivin vastaamaan sitä
+  const navigate = (page: Page) => {
+    if (page !== currentPage) {
+      window.history.pushState(null, '', PAGE_PATHS[page]);
+    }
+    setCurrentPage(page);
+  };
 
   const renderPage = () => {
     switch(currentPage) {
@@ -39,9 +73,9 @@ function App() {
         </div>
         <img src={signatureImage} alt="Aleksi Hakala" className="signature-overlay" />
       </div>
-      <Navigation 
-        currentPage={currentPage} 
-        setCurrentPage={setCurrentPage}
+      <Navigation
+        currentPage={currentPage}
+        onNavigate={navigate}
         language={language}
         setLanguage={setLanguage}
       />

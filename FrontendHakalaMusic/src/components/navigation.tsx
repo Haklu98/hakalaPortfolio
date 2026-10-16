@@ -1,25 +1,34 @@
-import { useState } from 'react';
+import { useState, type MouseEvent } from 'react';
 import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaChevronDown, FaSoundcloud, FaBandcamp } from 'react-icons/fa';
 import { SiApplemusic } from 'react-icons/si';
 import '../styles/Navigation.css';
 import { LuMenu } from "react-icons/lu";
+import { PAGE_PATHS, type Page } from '../routes';
 
 interface NavigationProps {
-  currentPage: string;
-  setCurrentPage: (page: string) => void;
+  currentPage: Page;
+  onNavigate: (page: Page) => void;
   language: string;
   setLanguage: (lang: string) => void;
 }
 
-const Navigation = ({ currentPage, setCurrentPage, language, setLanguage }: NavigationProps) => {
+const Navigation = ({ currentPage, onNavigate, language, setLanguage }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isMusicDropdownOpen, setIsMusicDropdownOpen] = useState(false);
 
-  const handleNavClick = (page: string) => {
-    setCurrentPage(page);
+  const handleNavClick = (page: Page) => {
+    onNavigate(page);
     setIsMenuOpen(false);
     setIsMusicDropdownOpen(false);
+  };
+
+  // Tavallinen klikkaus vaihtaa sivun lataamatta koko sivustoa uudelleen.
+  // Ctrl/Cmd-klikkaus ja hiiren rullaklikkaus avaavat sivun uuteen välilehteen kuten muuallakin.
+  const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>, page: Page) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    handleNavClick(page);
   };
 
   const handleLanguageSelect = (lang: string) => {
@@ -60,11 +69,11 @@ const Navigation = ({ currentPage, setCurrentPage, language, setLanguage }: Navi
       {isMenuOpen && <div className="menu-backdrop" onClick={() => setIsMenuOpen(false)} />}
       
       <ul className={`nav-links ${isMenuOpen ? 'nav-links-open' : ''}`}>
-        <li><a onClick={() => handleNavClick('home')} className={currentPage === 'home' ? 'active' : ''}>{t.home}</a></li>
-        <li><a onClick={() => handleNavClick('about')} className={currentPage === 'about' ? 'active' : ''}>{t.about}</a></li>
+        <li><a href={PAGE_PATHS['home']} onClick={(e) => handleLinkClick(e, 'home')} className={currentPage === 'home' ? 'active' : ''}>{t.home}</a></li>
+        <li><a href={PAGE_PATHS['about']} onClick={(e) => handleLinkClick(e, 'about')} className={currentPage === 'about' ? 'active' : ''}>{t.about}</a></li>
         <li className="music-dropdown">
           <button 
-            className={`music-dropdown-button ${(currentPage === 'film-music' || currentPage === 'video-game-music' || currentPage === 'portfolio') ? 'active' : ''}`}
+            className={`music-dropdown-button ${(currentPage === 'film-music' || currentPage === 'video-game-music') ? 'active' : ''}`}
             onClick={() => setIsMusicDropdownOpen(!isMusicDropdownOpen)}
           >
             <span className="music-text">{t.music}</span>
@@ -72,16 +81,16 @@ const Navigation = ({ currentPage, setCurrentPage, language, setLanguage }: Navi
           </button>
           {isMusicDropdownOpen && (
             <div className="music-dropdown-menu">
-              <button onClick={() => handleNavClick('film-music')} className={currentPage === 'film-music' ? 'active' : ''}>
+              <a href={PAGE_PATHS['film-music']} onClick={(e) => handleLinkClick(e, 'film-music')} className={currentPage === 'film-music' ? 'active' : ''}>
                 {t.filmMusic}
-              </button>
-              <button onClick={() => handleNavClick('video-game-music')} className={currentPage === 'video-game-music' ? 'active' : ''}>
+              </a>
+              <a href={PAGE_PATHS['video-game-music']} onClick={(e) => handleLinkClick(e, 'video-game-music')} className={currentPage === 'video-game-music' ? 'active' : ''}>
                 {t.videoGameMusic}
-              </button>
+              </a>
             </div>
           )}
         </li>
-        <li><a onClick={() => handleNavClick('contact')} className={currentPage === 'contact' ? 'active' : ''}>{t.contact}</a></li>
+        <li><a href={PAGE_PATHS['contact']} onClick={(e) => handleLinkClick(e, 'contact')} className={currentPage === 'contact' ? 'active' : ''}>{t.contact}</a></li>
         <li className="mobile-social-icons">
            <a href='https://open.spotify.com/artist/4aPGiD72YUspyHkT368CU9?si=n1oniX1rQMWcr4ry621-jQ' target="_blank"><FaSpotify /></a>
                     <a href='https://music.apple.com/us/artist/aleksi-hakala/1165871624' target="_blank"><SiApplemusic /></a>
