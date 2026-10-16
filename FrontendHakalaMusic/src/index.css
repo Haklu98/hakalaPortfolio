@@ -1,25 +1,39 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* Jost: vapaasti käytettävä Futura-tyylinen fontti (SIL Open Font License, ks. assets/fonts/OFL.txt).
+   Mukana vain latinalaiset merkit ääkkösineen, joten tiedosto on pieni. */
+@font-face {
+  font-family: 'Jost';
+  src: url('./assets/fonts/jost-latin.woff') format('woff');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 1);
-  background-color: #2e2e2eff;
+/* Sivuston värit ja fontti yhdessä paikassa */
+:root {
+  --color-black: #000000;                    /* valikon ja alatunnisteen tausta */
+  --color-panel: rgba(0, 0, 0, 0.74);        /* sisältöpaneelit taustakuvan päällä */
+  --color-text: #eeebe5;                     /* lämmin valkokankaan valkoinen */
+  --color-text-dim: #a9a49c;                 /* toissijainen teksti */
+  --color-rule: rgba(238, 235, 229, 0.16);   /* ohuet erotinviivat */
+
+  /* Korostusväri: nimikirjoituksen punainen */
+  --color-accent: #b10000;                   /* täytetyt painikkeet */
+  --color-accent-bright: #f0453c;            /* korostettu teksti ja viivat tummalla pohjalla */
+  --accent-glow: 0 0 6px rgba(240, 69, 60, 0.9), 0 0 18px rgba(177, 0, 0, 0.85);
+
+  --font-main: 'Jost', 'Futura', 'Trebuchet MS', Arial, sans-serif;
+
+  font-family: var(--font-main);
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: dark;
+  color: var(--color-text);
+  background-color: var(--color-black);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
@@ -28,38 +42,70 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-bright);
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  font-size: 1em;
+  color: inherit;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 2px;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Upotetut soittimet (Bandcamp, SoundCloud, YouTube) ovat vaaleita sivuja.
+   Ilman tätä selain maalaisi läpinäkyvän soittimen taakse valkoisen laatikon,
+   koska tämä sivu on tumma ja soitin vaalea. */
+iframe {
+  color-scheme: normal;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #ffffffff;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+/* Näppäimistöllä liikkuva näkee aina, missä kohdassa on */
+:focus-visible {
+  outline: 2px solid var(--color-accent-bright);
+  outline-offset: 3px;
+}
+
+/* Otsikot kuin elokuvan nimiruudut: kevyt, väljä, suuraakkosin */
+h1 {
+  font-size: clamp(1.9rem, 4.2vw, 3.3rem);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 0.4em;
+  padding-left: 0.16em; /* tasapainottaa väljän välistyksen, jotta keskitys osuu kohdalleen */
+}
+
+h2 {
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 1.25em;
+  padding-left: 0.14em;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.75em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
   }
 }
