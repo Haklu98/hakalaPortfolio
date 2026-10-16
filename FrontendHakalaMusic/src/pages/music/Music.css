@@ -3,6 +3,12 @@
   width: 100%;
   max-width: 900px;
   text-align: center;
+  scroll-margin-top: 90px; /* "Takaisin ylös" ei jätä otsikkoa valikon alle */
+}
+
+/* Sivun alku saa kohdistuksen "Takaisin ylös" -painikkeesta; ei näytetä kehystä otsikon ympärillä */
+.music-intro:focus {
+  outline: none;
 }
 
 .music-intro p {
@@ -201,6 +207,46 @@
   background: var(--color-black);
 }
 
+/* "Takaisin ylös" -painike oikeassa alakulmassa. Piilossa sivun alussa,
+   ilmestyy pehmeästi kun otsikko on vieritetty pois näkyvistä. */
+.back-to-top {
+  position: fixed;
+  right: calc(1.5rem + env(safe-area-inset-right));
+  bottom: calc(1.5rem + env(safe-area-inset-bottom));
+  z-index: 900; /* valikon ja mobiilivalikon alla */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  font-size: 1.6rem;
+  color: var(--color-text);
+  background: rgba(14, 9, 7, 0.82);
+  border: 1px solid var(--color-text-dim);
+  border-radius: 2px;
+  opacity: 0;
+  visibility: hidden; /* piilossa ei myöskään voi valita näppäimistöllä */
+  transform: translateY(8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0.25s,
+    color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+
+/* Hiiren alla nuoli ja reuna syttyvät hiillossävyyn kuten valikon valittu kohta */
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  color: var(--color-accent-bright);
+  border-color: var(--color-accent-bright);
+  box-shadow: var(--accent-glow);
+}
+
 @media (max-width: 900px) {
   .music-section {
     margin-top: 3.5rem;
@@ -230,5 +276,12 @@
   .release-card-placeholder {
     font-size: 0.8rem;
     letter-spacing: 0.14em;
+  }
+
+  .back-to-top {
+    right: calc(1rem + env(safe-area-inset-right));
+    bottom: calc(1rem + env(safe-area-inset-bottom));
+    width: 44px;
+    height: 44px;
   }
 }
