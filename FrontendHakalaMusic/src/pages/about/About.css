@@ -1,52 +1,79 @@
+.hero-banner-about {
+  width: 100%;
+  text-align: center;
+}
+
 .about-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  margin-top: 2rem;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  gap: 3.5rem;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.about-text {
+  max-width: 68ch;
 }
 
 .about-text p {
-  margin-bottom: 1rem;
-  line-height: 1.6;
-  text-align: justify;
+  margin: 0 0 1.25rem;
+  line-height: 1.75;
 }
 
-.placeholder-image {
-  border-radius: 5px;
+.about-text strong {
+  font-weight: 500;
 }
 
-.artist-image {
-  width: 80%;
-  height: auto;
-  border-radius: 10px;
+.about-text h3 {
+  margin-top: 2.5rem;
 }
 
-.hero-banner-about {
-  width: 90%;
-  text-align: center;
+.about-text ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+/* Koulutus: vuosi omassa sarakkeessaan, kuvaus rivittyy sen viereen */
+.about-text li {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  column-gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.about-text li strong {
+  font-weight: 400;
+  color: var(--color-text-dim);
 }
 
 .about-image {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
-li {
-  text-align: justify;
+.artist-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
 }
 
 @media (max-width: 768px) {
   .about-content {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
   }
-}
 
-@media (max-width: 480px) {
-  .placeholder-image {
-    padding: 1.5rem;
-    font-size: 0.9rem;
+  .about-image {
+    flex-direction: row;
+  }
+
+  .about-image .artist-image {
+    width: calc(50% - 0.75rem);
+    object-fit: cover;
   }
 }

@@ -14,7 +14,6 @@ interface NavigationProps {
 
 const Navigation = ({ currentPage, onNavigate, language, setLanguage }: NavigationProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false);
   const [isMusicDropdownOpen, setIsMusicDropdownOpen] = useState(false);
 
   const handleNavClick = (page: Page) => {
@@ -29,11 +28,6 @@ const Navigation = ({ currentPage, onNavigate, language, setLanguage }: Navigati
     if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     handleNavClick(page);
-  };
-
-  const handleLanguageSelect = (lang: string) => {
-    setLanguage(lang);
-    setIsLangDropdownOpen(false);
   };
 
   const translations = {
@@ -100,24 +94,15 @@ const Navigation = ({ currentPage, onNavigate, language, setLanguage }: Navigati
         <li className="mobile-social-icons">
            <SocialLinks />
         </li>
-        <li className="lang-dropdown">
-          <button 
-            className="lang-dropdown-button"
-            onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-          >
-            {language.toUpperCase()}
-            <FaChevronDown className={`chevron ${isLangDropdownOpen ? 'chevron-up' : ''}`} />
+        {/* Kielivalinta: molemmat kielet näkyvillä, valittu korostettuna */}
+        <li className="lang-switch" role="group" aria-label="Language / Kieli">
+          <button type="button" lang="en" aria-pressed={language === 'en'} className={language === 'en' ? 'active' : ''} onClick={() => setLanguage('en')}>
+            EN
           </button>
-          {isLangDropdownOpen && (
-            <div className="lang-dropdown-menu">
-              <button onClick={() => handleLanguageSelect('en')} className={language === 'en' ? 'active' : ''}>
-                EN
-              </button>
-              <button onClick={() => handleLanguageSelect('fi')} className={language === 'fi' ? 'active' : ''}>
-                FI
-              </button>
-            </div>
-          )}
+          <span className="lang-switch-divider" aria-hidden="true">/</span>
+          <button type="button" lang="fi" aria-pressed={language === 'fi'} className={language === 'fi' ? 'active' : ''} onClick={() => setLanguage('fi')}>
+            FI
+          </button>
         </li>
       </ul>
     </nav>
