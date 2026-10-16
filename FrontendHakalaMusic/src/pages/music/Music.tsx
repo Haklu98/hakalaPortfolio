@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FaSpotify, FaBandcamp, FaSoundcloud } from 'react-icons/fa';
 import { SiApplemusic } from 'react-icons/si';
+import { LuChevronUp } from 'react-icons/lu';
 import type { IconType } from 'react-icons';
 import { RELEASES, FILM_WORKS, GAME_WORKS, type Release, type Video } from '../../data/music';
 import './Music.css';
@@ -78,6 +79,45 @@ const VideoGrid = ({ videos, lang }: { videos: Video[]; lang: Lang }) => (
   </div>
 );
 
+// "Takaisin ylös" -painike. Ilmestyy, kun sivun alku (otsikko ja pikalinkit) on vieritetty
+// kokonaan pois näkyvistä, ja vie takaisin sinne.
+const BackToTop = ({ targetId, label }: { targetId: string; label: string }) => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    // Seurataan, onko sivun alku näkyvissä (kevyempi kuin tarkistaa jokaisen vierityksen kohdalla)
+    const observer = new IntersectionObserver(([entry]) => {
+      setVisible(!entry.isIntersecting && entry.boundingClientRect.top < 0);
+    });
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [targetId]);
+
+  const scrollToTop = () => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
+    // Jos käyttäjä on vähentänyt liikettä laitteensa asetuksista, hypätään suoraan ylös
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    // Näppäimistöllä liikkuva jatkaa sivun alusta, ei painikkeen kohdalta
+    target.focus({ preventScroll: true });
+  };
+
+  return (
+    <button
+      type="button"
+      className={`back-to-top${visible ? ' is-visible' : ''}`}
+      onClick={scrollToTop}
+      aria-label={label}
+      title={label}
+    >
+      <LuChevronUp aria-hidden="true" />
+    </button>
+  );
+};
+
 const Music = ({ language }: MusicProps) => {
   const translations = {
     en: {
@@ -89,6 +129,7 @@ const Music = ({ language }: MusicProps) => {
       games: 'Game music',
       soundcloud: 'Collection on SoundCloud',
       cover: 'Cover art',
+      backToTop: 'Back to top',
     },
     fi: {
       title: 'Musiikki',
@@ -99,6 +140,7 @@ const Music = ({ language }: MusicProps) => {
       games: 'Pelimusiikki',
       soundcloud: 'Kokoelma SoundCloudissa',
       cover: 'Kansikuva',
+      backToTop: 'Takaisin ylös',
     },
   };
 
@@ -115,7 +157,7 @@ const Music = ({ language }: MusicProps) => {
 
   return (
     <div className="page page-music">
-      <section className="music-intro">
+      <section id="music-top" className="music-intro" tabIndex={-1}>
         <h1>{t.title}</h1>
         <hr className="divider" />
         <p>{t.intro}</p>
@@ -156,6 +198,8 @@ const Music = ({ language }: MusicProps) => {
         <h2 id="games-title">{t.games}</h2>
         <VideoGrid videos={GAME_WORKS} lang={lang} />
       </section>
+
+      <BackToTop targetId="music-top" label={t.backToTop} />
     </div>
   );
 };

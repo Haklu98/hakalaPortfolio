@@ -7,7 +7,7 @@ import About from './pages/about/About';
 import Music from './pages/music/Music';
 import Contact from './pages/contact/Contact';
 import './App.css';
-import signatureImage from './assets/NimmariUus.png';
+import signatureImage from './assets/nimikirjoitus.webp';
 import { PAGE_PATHS, PAGE_TITLES, SITE_URL, normalizeCurrentAddress, pageFromPath, type Page } from './routes';
 
 // Selain muistaa kävijän valitseman kielen seuraavalla käynnillä

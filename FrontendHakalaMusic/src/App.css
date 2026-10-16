@@ -5,30 +5,24 @@
 }
 
 /* Taustakuva omana kerroksenaan, joka pysyy paikallaan sivua vieritettäessä
-   (toimii myös iPhonella). Selain lataa vain yhden version näytön koon ja tarkkuuden mukaan. */
+   (toimii myös iPhonella). Sama tarkka kuva (3840 px) kaikilla näytöillä;
+   selain sovittaa sen näytön kokoon. */
 .app::before {
   content: '';
   position: fixed;
   inset: 0;
   z-index: -1;
   background-color: var(--color-black);
-  background-image: url('./assets/bg-1920.webp');
+  background-image: url('./assets/bg.webp');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* Isot näytöt, tarkat läppärinäytöt ja 4K */
-@media (min-width: 1921px), (min-width: 1025px) and (min-resolution: 1.5dppx) {
-  .app::before {
-    background-image: url('./assets/bg-2560.webp');
-  }
-}
-
-/* Puhelimet pystyasennossa: pystyrajaus, jossa metsäpolku on keskellä */
+/* Puhelimet pystyasennossa: kuvasta näkyy kapea keskiosa, rajataan vuoren kohdalle */
 @media (max-width: 768px) and (orientation: portrait) {
   .app::before {
-    background-image: url('./assets/bg-mobile.webp');
+    background-position: 45% center;
   }
 }
 
@@ -56,7 +50,7 @@
 
 .social-icons svg {
   font-size: 2.5rem;
-  color: var(--color-text);
+  color: white;
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -71,6 +65,9 @@
   width: 80%;
   object-fit: contain;
   z-index: 10;
+  /* Nimikirjoituksen neonhehku: kirkas reuna ja laajempi lämmin hehku.
+     Hehku tehdään tässä eikä kuvatiedostossa, jotta kuva pysyy kevyenä ja hehkua voi säätää. */
+  filter: drop-shadow(0 0 2px rgba(255, 122, 69, 0.45)) drop-shadow(0 0 8px rgba(196, 86, 28, 0.3));
 }
 
 /* Sisältöpaneelit: tumma, pelkistetty "valkokangas" taustakuvan päällä */
