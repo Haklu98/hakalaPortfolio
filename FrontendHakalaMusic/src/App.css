@@ -1,9 +1,35 @@
 .app {
+  position: relative;
+  isolation: isolate; /* taustakerros pysyy sisällön takana */
   flex-direction: column;
-  background-image: url('./assets/bg-poster.jpg');
+}
+
+/* Taustakuva omana kerroksenaan, joka pysyy paikallaan sivua vieritettäessä
+   (toimii myös iPhonella). Selain lataa vain yhden version näytön koon ja tarkkuuden mukaan. */
+.app::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-black);
+  background-image: url('./assets/bg-1920.webp');
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+}
+
+/* Isot näytöt, tarkat läppärinäytöt ja 4K */
+@media (min-width: 1921px), (min-width: 1025px) and (min-resolution: 1.5dppx) {
+  .app::before {
+    background-image: url('./assets/bg-2560.webp');
+  }
+}
+
+/* Puhelimet pystyasennossa: pystyrajaus, jossa metsäpolku on keskellä */
+@media (max-width: 768px) and (orientation: portrait) {
+  .app::before {
+    background-image: url('./assets/bg-mobile.webp');
+  }
 }
 
 .hero-banner {
@@ -170,4 +196,4 @@ button {
   body {
     font-size: 22px;
   }
-}
+}
