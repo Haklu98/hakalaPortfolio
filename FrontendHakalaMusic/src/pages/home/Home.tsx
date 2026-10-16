@@ -12,9 +12,9 @@ const Home = ({ language }: HomeProps) => {
     en: {
       title: 'Composer, Musician, Sound Designer',
       subtitle: 'The portal to my music and creative soundscapes',
-      introduction: 'Hello! I am Aleksi Hakala, an aspiring composer with a passion for film and game music. Welcome to my personal portfolio, where you´ll find all of my composing works and more! My goal is to create immersive and emotionally engaging sounds that evolve and complement the visuals without taking away the magic.',
+      introduction: 'Hello! I am Aleksi Hakala, an aspiring composer with a passion for film and game music. Welcome to my personal portfolio, where you’ll find all of my composing works and more! My goal is to create immersive and emotionally engaging sounds that evolve and complement the visuals without taking away the magic.',
       aboutvideo: 'A brief introduction to my relationship with music',
-      filmmusic: 'My entry for this years Indie Film Music Contest',
+      filmmusic: 'My entry for this year’s Indie Film Music Contest',
       soundcloud: 'Collection of my music for you to listen to',
       latest: 'Latest Release',
       listen: 'Listen now!',
@@ -47,26 +47,26 @@ const Home = ({ language }: HomeProps) => {
           <p>{t.latest}</p>
           <div className='release-layout'>
             <div className='music-icons-left'>
-              <a href='https://open.spotify.com/track/59PGZ8c3T6ZLJ6YjyWd3iz?si=ba7a601ad70c4c14' target="_blank"><FaSpotify /></a>
-              <a href='https://music.apple.com/us/song/chasing-fireflies/1869885643' target="_blank"><SiApplemusic /></a>
+              <a href='https://open.spotify.com/track/59PGZ8c3T6ZLJ6YjyWd3iz?si=ba7a601ad70c4c14' target="_blank" rel="noopener noreferrer" aria-label="Spotify"><FaSpotify aria-hidden="true" /></a>
+              <a href='https://music.apple.com/us/song/chasing-fireflies/1869885643' target="_blank" rel="noopener noreferrer" aria-label="Apple Music"><SiApplemusic aria-hidden="true" /></a>
             </div>
             <div className='releaseContainer'>
               <img className='release-image' src={latestImage} alt="Latest Release" />
             </div>
             <div className='music-icons-right'>
-              <a href='https://aleksihakala.bandcamp.com/track/chasing-fireflies' target="_blank"><FaBandcamp /></a>
-              <a href='https://soundcloud.com/aleksihakala/chasing-fireflies' target="_blank"><FaSoundcloud /></a>
+              <a href='https://aleksihakala.bandcamp.com/track/chasing-fireflies' target="_blank" rel="noopener noreferrer" aria-label="Bandcamp"><FaBandcamp aria-hidden="true" /></a>
+              <a href='https://soundcloud.com/aleksihakala/chasing-fireflies' target="_blank" rel="noopener noreferrer" aria-label="SoundCloud"><FaSoundcloud aria-hidden="true" /></a>
             </div>
           </div>
           <div className='listen-now'>
             <p>{t.listen}</p>
-           <iframe className='bandcamp-embed' src="https://bandcamp.com/EmbeddedPlayer/track=147936536/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://aleksihakala.bandcamp.com/track/chasing-fireflies">Chasing Fireflies by Aleksi Hakala</a></iframe>
+           <iframe className='bandcamp-embed' title="Chasing Fireflies – Bandcamp player" src="https://bandcamp.com/EmbeddedPlayer/track=147936536/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://aleksihakala.bandcamp.com/track/chasing-fireflies">Chasing Fireflies by Aleksi Hakala</a></iframe>
           </div>
           <div className='music-icons-mobile'>
-            <a href='https://open.spotify.com/track/59PGZ8c3T6ZLJ6YjyWd3iz?si=ba7a601ad70c4c14' target="_blank"><FaSpotify /></a>
-            <a href='https://music.apple.com/us/song/chasing-fireflies/1869885643' target="_blank"><SiApplemusic /></a>
-            <a href='https://aleksihakala.bandcamp.com/track/chasing-fireflies' target="_blank"><FaBandcamp /></a>
-            <a href='https://soundcloud.com/aleksihakala/chasing-fireflies' target="_blank"><FaSoundcloud /></a>
+            <a href='https://open.spotify.com/track/59PGZ8c3T6ZLJ6YjyWd3iz?si=ba7a601ad70c4c14' target="_blank" rel="noopener noreferrer" aria-label="Spotify"><FaSpotify aria-hidden="true" /></a>
+            <a href='https://music.apple.com/us/song/chasing-fireflies/1869885643' target="_blank" rel="noopener noreferrer" aria-label="Apple Music"><SiApplemusic aria-hidden="true" /></a>
+            <a href='https://aleksihakala.bandcamp.com/track/chasing-fireflies' target="_blank" rel="noopener noreferrer" aria-label="Bandcamp"><FaBandcamp aria-hidden="true" /></a>
+            <a href='https://soundcloud.com/aleksihakala/chasing-fireflies' target="_blank" rel="noopener noreferrer" aria-label="SoundCloud"><FaSoundcloud aria-hidden="true" /></a>
           </div>
         </div>
       <hr className="divider" />
@@ -100,10 +100,11 @@ const Home = ({ language }: HomeProps) => {
           <h2>{t.soundcloud}</h2>
           <div className="soundcloud-embed">
             <iframe 
+              title="Aleksi Hakala Collection – SoundCloud player"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2183078540&color=%238d0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&theme=dark"
             ></iframe>
             <div className="soundcloud-attribution">
-              <a href="https://soundcloud.com/aleksihakala" title="Aleksi Hakala" target="_blank">Aleksi Hakala</a> · <a href="https://soundcloud.com/aleksihakala/sets/aleksi-hakala-collection" title="Aleksi Hakala Collection" target="_blank">Aleksi Hakala Collection</a>
+              <a href="https://soundcloud.com/aleksihakala" title="Aleksi Hakala" target="_blank" rel="noopener noreferrer">Aleksi Hakala</a> · <a href="https://soundcloud.com/aleksihakala/sets/aleksi-hakala-collection" title="Aleksi Hakala Collection" target="_blank" rel="noopener noreferrer">Aleksi Hakala Collection</a>
             </div>
           </div>
         </div>

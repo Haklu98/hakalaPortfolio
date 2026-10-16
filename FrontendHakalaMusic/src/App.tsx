@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import Navigation from './components/navigation';
 import Footer from './components/footer';
+import SocialLinks from './components/SocialLinks';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import FilmMusic from './pages/portfolio/FilmMusic';
 import VideoGameMusic from './pages/portfolio/VideoGameMusic';
 import Contact from './pages/contact/Contact';
-import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaSoundcloud, FaBandcamp } from 'react-icons/fa';
-import { SiApplemusic } from 'react-icons/si';
 import './App.css';
 import signatureImage from './assets/NimmariUus.png';
 import { PAGE_PATHS, PAGE_TITLES, SITE_URL, pageFromPath, type Page } from './routes';
@@ -63,13 +62,7 @@ function App() {
     <div className="app">
       <div className="hero-banner">
         <div className="social-icons">
-          <a href='https://open.spotify.com/artist/4aPGiD72YUspyHkT368CU9?si=n1oniX1rQMWcr4ry621-jQ' target="_blank"><FaSpotify /></a>
-          <a href='https://music.apple.com/us/artist/aleksi-hakala/1165871624' target="_blank"><SiApplemusic /></a>
-          <a href='https://www.instagram.com/aleksihakalacomposer/' target='_blank'><FaInstagram /></a>
-          <a href='https://www.tiktok.com/@aleksihakalacomposer' target="_blank"><FaTiktok /></a>
-          <a href='https://www.youtube.com/@Aleksi_Hakala' target="_blank"><FaYoutube /></a>
-          <a href='https://soundcloud.com/aleksihakala' target="_blank"><FaSoundcloud /></a>
-          <a href='https://aleksihakala.bandcamp.com/' target="_blank"><FaBandcamp /></a>
+          <SocialLinks />
         </div>
         <img src={signatureImage} alt="Aleksi Hakala" className="signature-overlay" />
       </div>

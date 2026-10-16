@@ -1,6 +1,6 @@
 import { useState, type MouseEvent } from 'react';
-import { FaSpotify, FaInstagram, FaTiktok, FaYoutube, FaChevronDown, FaSoundcloud, FaBandcamp } from 'react-icons/fa';
-import { SiApplemusic } from 'react-icons/si';
+import { FaChevronDown } from 'react-icons/fa';
+import SocialLinks from './SocialLinks';
 import '../styles/Navigation.css';
 import { LuMenu } from "react-icons/lu";
 import { PAGE_PATHS, type Page } from '../routes';
@@ -43,7 +43,9 @@ const Navigation = ({ currentPage, onNavigate, language, setLanguage }: Navigati
       music: 'Music', 
       contact: 'Contact',
       filmMusic: 'Film Music',
-      videoGameMusic: 'Video Game Music'
+      videoGameMusic: 'Video Game Music',
+      openMenu: 'Open menu',
+      closeMenu: 'Close menu'
     },
     fi: { 
       home: 'Koti', 
@@ -51,7 +53,9 @@ const Navigation = ({ currentPage, onNavigate, language, setLanguage }: Navigati
       music: 'Musiikki', 
       contact: 'Yhteystiedot',
       filmMusic: 'Elokuvamusiikki',
-      videoGameMusic: 'Videopelimusiikki'
+      videoGameMusic: 'Videopelimusiikki',
+      openMenu: 'Avaa valikko',
+      closeMenu: 'Sulje valikko'
     }
   };
 
@@ -62,8 +66,10 @@ const Navigation = ({ currentPage, onNavigate, language, setLanguage }: Navigati
       <button 
         className="menu-toggle"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
+        aria-label={isMenuOpen ? t.closeMenu : t.openMenu}
+        aria-expanded={isMenuOpen}
       >
-        <LuMenu size={32} color="#fff" />
+        <LuMenu size={32} color="#fff" aria-hidden="true" />
       </button>
       
       {isMenuOpen && <div className="menu-backdrop" onClick={() => setIsMenuOpen(false)} />}
@@ -92,13 +98,7 @@ const Navigation = ({ currentPage, onNavigate, language, setLanguage }: Navigati
         </li>
         <li><a href={PAGE_PATHS['contact']} onClick={(e) => handleLinkClick(e, 'contact')} className={currentPage === 'contact' ? 'active' : ''}>{t.contact}</a></li>
         <li className="mobile-social-icons">
-           <a href='https://open.spotify.com/artist/4aPGiD72YUspyHkT368CU9?si=n1oniX1rQMWcr4ry621-jQ' target="_blank"><FaSpotify /></a>
-                    <a href='https://music.apple.com/us/artist/aleksi-hakala/1165871624' target="_blank"><SiApplemusic /></a>
-                    <a href='https://www.instagram.com/aleksihakalacomposer/' target='_blank'><FaInstagram /></a>
-                    <a href='https://www.tiktok.com/@aleksihakalacomposer' target="_blank"><FaTiktok /></a>
-                    <a href='https://www.youtube.com/@Aleksi_Hakala' target="_blank"><FaYoutube /></a>
-                    <a href='https://soundcloud.com/aleksihakala' target="_blank"><FaSoundcloud /></a>
-                    <a href='https://aleksihakala.bandcamp.com/' target="_blank"><FaBandcamp /></a>
+           <SocialLinks />
         </li>
         <li className="lang-dropdown">
           <button 
