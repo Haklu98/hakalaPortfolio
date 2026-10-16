@@ -7,10 +7,12 @@ A modern React-based music portfolio website deployed on AWS with global CDN dis
 ### Frontend
 - **React + TypeScript + Vite** - Modern web application with fast build tooling
 - **Responsive Design** - Mobile-first approach for all devices
-- **Single Page Application** - Client-side routing for smooth navigation
+- **Single Page Application** - Client-side routing with real URLs (`/about`, `/film-music`, `/video-game-music`, `/contact`)
+- **Bilingual** - English and Finnish, the visitor's choice is remembered
+- **Contact** - Mailto link and copy-address button, no third-party form service or API keys
 
 ### AWS Infrastructure
-- **S3 Bucket** - Static website hosting with public read access
+- **S3 Bucket** - Private storage, readable only by CloudFront (Origin Access Control)
 - **CloudFront CDN** - Global content delivery with SSL/TLS termination
 - **Route53** - DNS management with custom domain routing
 - **ACM Certificate** - SSL certificate for HTTPS encryption
@@ -45,12 +47,23 @@ cdk deploy
 ```
 
 ### Deploy Frontend
-```bash
+Builds the site, uploads it to S3 and clears the CloudFront cache.
+
+Windows (PowerShell):
+```powershell
 cd FrontendHakalaMusic
 npm install
-npm run build
-# Upload build files to S3 bucket
+cd ..\scripts\windows
+.\build-upload.bat
 ```
+
+macOS / Linux:
+```bash
+cd FrontendHakalaMusic && npm install
+cd ../scripts/mac && ./build-upload.sh
+```
+
+The scripts must be run from their own folder. AWS credentials are needed (`aws configure`).
 
 ## Domain Configuration
 
@@ -69,7 +82,7 @@ npm run build
 
 ## Security Features
 
-- HTTPS-only access (HTTP redirects to HTTPS)
-- CloudFront security headers
-- S3 bucket policies for secure access
+- HTTPS-only access (HTTP redirects to HTTPS, HSTS enabled)
+- CloudFront security headers: HSTS, frame protection (X-Frame-Options + CSP frame-ancestors), nosniff, referrer policy
+- Private S3 bucket: no public access, readable only by the CloudFront distribution, non-HTTPS requests denied
 - DNS validation for SSL certificates

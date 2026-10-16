@@ -8,13 +8,13 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) {
-              return 'vendor';
-            }
-            if (id.includes('react-icons')) {
-              return 'icons';
-            }
+          if (!id.includes('node_modules')) return;
+          // Kuvakkeet tarkistetaan ensin, koska nimessä "react-icons" on myös sana "react"
+          if (id.includes('/node_modules/react-icons/')) {
+            return 'icons';
+          }
+          if (/\/node_modules\/(react|react-dom|scheduler)\//.test(id)) {
+            return 'vendor';
           }
         }
       }
