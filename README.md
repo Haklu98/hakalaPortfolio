@@ -7,7 +7,7 @@ A modern React-based music portfolio website deployed on AWS with global CDN dis
 ### Frontend
 - **React + TypeScript + Vite** - Modern web application with fast build tooling
 - **Responsive Design** - Mobile-first approach for all devices
-- **Single Page Application** - Client-side routing with real URLs (`/about`, `/film-music`, `/video-game-music`, `/contact`)
+- **Single Page Application** - Client-side routing with real URLs (`/about`, `/music`, `/contact`); old `/film-music` and `/video-game-music` links lead to the matching section of `/music`
 - **Bilingual** - English and Finnish, the visitor's choice is remembered
 - **Contact** - Mailto link and copy-address button, no third-party form service or API keys
 

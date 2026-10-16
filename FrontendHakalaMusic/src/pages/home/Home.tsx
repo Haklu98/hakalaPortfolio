@@ -37,7 +37,6 @@ const Home = ({ language }: HomeProps) => {
       introduction: 'Hello! I am Aleksi Hakala, an aspiring composer with a passion for film and game music. Welcome to my personal portfolio, where you’ll find all of my composing works and more! My goal is to create immersive and emotionally engaging sounds that evolve and complement the visuals without taking away the magic.',
       aboutvideo: 'A brief introduction to my relationship with music',
       filmmusic: 'My entry for this year’s Indie Film Music Contest',
-      soundcloud: 'Collection of my music for you to listen to',
       latest: 'Latest release',
       play: 'Play',
       buy: 'Buy',
@@ -50,7 +49,6 @@ const Home = ({ language }: HomeProps) => {
       introduction: 'Hei! Olen Aleksi Hakala, aloitteleva säveltäjä, jolla on intohimo elokuva- ja pelimusiikkiin. Tervetuloa henkilökohtaiseen portfoliosivustolleni, josta löydät kaikki sävellystyöni!',
       aboutvideo: 'Pieni esittely suhteestani musiikkiin',
       filmmusic: 'Tämän vuoden Indie Film Music Contest -kilpailuun tekemäni sävellys',
-      soundcloud: 'Kokoelma musiikkiani kuunneltavaksi',
       latest: 'Uusin julkaisu',
       play: 'Kuuntele',
       buy: 'Osta',
@@ -124,19 +122,6 @@ const Home = ({ language }: HomeProps) => {
             ></iframe>
             <figcaption>{t.filmmusic}</figcaption>
           </figure>
-        </div>
-      </section>
-
-      <section className="soundcloud-section">
-        <h2>{t.soundcloud}</h2>
-        <div className="soundcloud-embed">
-          <iframe
-            title="Aleksi Hakala Collection – SoundCloud player"
-            src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2183078540&color=%238d0000&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&theme=dark"
-          ></iframe>
-          <div className="soundcloud-attribution">
-            <a href="https://soundcloud.com/aleksihakala" title="Aleksi Hakala" target="_blank" rel="noopener noreferrer">Aleksi Hakala</a> · <a href="https://soundcloud.com/aleksihakala/sets/aleksi-hakala-collection" title="Aleksi Hakala Collection" target="_blank" rel="noopener noreferrer">Aleksi Hakala Collection</a>
-          </div>
         </div>
       </section>
     </div>
