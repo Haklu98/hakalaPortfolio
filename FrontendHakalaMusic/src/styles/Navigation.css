@@ -1,10 +1,10 @@
-/* Päävalikko: musta palkki kuin valkokankaan reunus */
+/* Päävalikko: tumma palkki kuin valkokankaan reunus */
 .navigation {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1.1rem 2rem;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(14, 9, 7, 0.9); /* --color-black hieman läpikuultavana */
   border-bottom: 1px solid var(--color-rule);
   position: sticky;
   top: 0;
@@ -102,7 +102,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(14, 9, 7, 0.6);
   z-index: 1500;
 }
 
@@ -117,7 +117,7 @@
     right: 0;
     width: 300px;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.96);
+    background: rgba(14, 9, 7, 0.96);
     border-left: 1px solid var(--color-rule);
     flex-direction: column;
     justify-content: flex-start;

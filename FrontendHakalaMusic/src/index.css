@@ -8,18 +8,21 @@
   font-display: swap;
 }
 
-/* Sivuston värit ja fontti yhdessä paikassa */
+/* Sivuston värit ja fontti yhdessä paikassa.
+   Paletti "hiillos": taustakuvan auringonlaskun lämpimät sävyt ja nimikirjoituksen punainen. */
 :root {
-  --color-black: #000000;                    /* valikon ja alatunnisteen tausta */
-  --color-panel: rgba(0, 0, 0, 0.74);        /* sisältöpaneelit taustakuvan päällä */
-  --color-text: #eeebe5;                     /* lämmin valkokankaan valkoinen */
-  --color-text-dim: #a9a49c;                 /* toissijainen teksti */
-  --color-rule: rgba(238, 235, 229, 0.16);   /* ohuet erotinviivat */
+  --color-black: #0e0907;                    /* valikon ja alatunnisteen tausta: lämmin, lähes musta ruskea */
+  --color-panel: rgba(18, 11, 8, 0.76);      /* sisältöpaneelit taustakuvan päällä */
+  --color-text: #f4e9da;                     /* kermanvaalea teksti */
+  --color-text-dim: #bba58c;                 /* toissijainen teksti: hiekanruskea */
+  --color-rule: rgba(250, 195, 141, 0.16);   /* ohuet erotinviivat: hento kultainen */
+  --color-hover-tint: rgba(244, 233, 218, 0.06); /* rivin tai painikkeen vaalea sävy hiiren alla */
+  --color-on-accent: #ffffff;                /* teksti korostusvärin päällä */
 
-  /* Korostusväri: nimikirjoituksen punainen */
-  --color-accent: #b10000;                   /* täytetyt painikkeet */
-  --color-accent-bright: #f0453c;            /* korostettu teksti ja viivat tummalla pohjalla */
-  --accent-glow: 0 0 6px rgba(240, 69, 60, 0.9), 0 0 18px rgba(177, 0, 0, 0.85);
+  /* Korostusväri: hiillos, nimikirjoituksen punaisen ja auringonlaskun välissä */
+  --color-accent: #a8321a;                   /* täytetyt painikkeet */
+  --color-accent-bright: #ff7a45;            /* korostettu teksti ja viivat tummalla pohjalla */
+  --accent-glow: 0 0 6px rgba(255, 122, 69, 0.9), 0 0 18px rgba(168, 50, 26, 0.85);
 
   --font-main: 'Jost', 'Futura', 'Trebuchet MS', Arial, sans-serif;
 
