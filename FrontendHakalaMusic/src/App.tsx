@@ -4,12 +4,11 @@ import Footer from './components/footer';
 import SocialLinks from './components/SocialLinks';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
-import FilmMusic from './pages/portfolio/FilmMusic';
-import VideoGameMusic from './pages/portfolio/VideoGameMusic';
+import Music from './pages/music/Music';
 import Contact from './pages/contact/Contact';
 import './App.css';
 import signatureImage from './assets/NimmariUus.png';
-import { PAGE_PATHS, PAGE_TITLES, SITE_URL, pageFromPath, type Page } from './routes';
+import { PAGE_PATHS, PAGE_TITLES, SITE_URL, normalizeCurrentAddress, pageFromPath, type Page } from './routes';
 
 // Selain muistaa kävijän valitseman kielen seuraavalla käynnillä
 const LANGUAGE_KEY = 'hakalamusic-language';
@@ -26,16 +25,14 @@ function loadSavedLanguage(): string {
 
 function App() {
   // Aloitussivu luetaan osoiteriviltä, esim. /contact avaa suoraan yhteystiedot
-  const [currentPage, setCurrentPage] = useState<Page>(() => pageFromPath(window.location.pathname));
+  const [currentPage, setCurrentPage] = useState<Page>(() => {
+    // Osoite siistitään ennen ensimmäistä piirtoa, jotta sivu ja osio ovat heti oikein
+    normalizeCurrentAddress();
+    return pageFromPath(window.location.pathname);
+  });
   const [language, setLanguage] = useState(loadSavedLanguage);
 
   useEffect(() => {
-    // Siistitään osoite: "/about/" -> "/about", tuntematon osoite -> "/"
-    const correctPath = PAGE_PATHS[pageFromPath(window.location.pathname)];
-    if (window.location.pathname !== correctPath) {
-      window.history.replaceState(null, '', correctPath + window.location.search + window.location.hash);
-    }
-
     // Selaimen takaisin- ja eteenpäin-painikkeet
     const handleBackForward = () => setCurrentPage(pageFromPath(window.location.pathname));
     window.addEventListener('popstate', handleBackForward);
@@ -73,8 +70,7 @@ function App() {
   const renderPage = () => {
     switch(currentPage) {
       case 'about': return <About language={language} />;
-      case 'film-music': return <FilmMusic language={language} />;
-      case 'video-game-music': return <VideoGameMusic language={language} />;
+      case 'music': return <Music language={language} />;
       case 'contact': return <Contact language={language} />;
       default: return <Home language={language} />;
     }

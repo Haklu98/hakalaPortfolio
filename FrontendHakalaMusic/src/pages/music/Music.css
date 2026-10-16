@@ -1,0 +1,234 @@
+/* Musiikki-sivu: omat julkaisut, elokuvamusiikki ja pelimusiikki */
+.page-music .music-intro {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
+}
+
+.music-intro p {
+  margin: 0;
+  color: var(--color-text-dim);
+}
+
+/* Pikalinkit sivun osioihin */
+.music-jump {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 2.25rem;
+  margin-top: 2rem;
+}
+
+.music-jump a {
+  padding: 0.5rem 0;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.music-jump a:hover {
+  border-bottom-color: var(--color-accent-bright);
+}
+
+.music-section {
+  width: 100%;
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--color-rule);
+  scroll-margin-top: 90px; /* kiinteä valikko ei peitä osion otsikkoa */
+}
+
+.music-section > h2 {
+  text-align: center;
+}
+
+/* Julkaisut kansikuvaruudukkona */
+.release-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 2.75rem 2rem;
+}
+
+.release-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.release-card-cover {
+  display: block;
+  aspect-ratio: 1 / 1;
+  transition: box-shadow 0.2s ease;
+}
+
+.release-card-cover:hover,
+.release-card-cover:focus-visible {
+  box-shadow: 0 0 0 1px var(--color-accent-bright), var(--accent-glow);
+}
+
+.release-card-cover img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Julkaisu ilman kansikuvaa: nimi nimiruudun tapaan */
+.release-card-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.6;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid var(--color-rule);
+}
+
+.release-card-title {
+  margin: 0.9rem 0 0.15rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.release-card-meta {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+}
+
+.release-card-links {
+  display: flex;
+  list-style: none;
+  margin: 0.35rem 0 0 -11px; /* kuvakkeet tasaantuvat vasempaan reunaan */
+  padding: 0;
+}
+
+.release-card-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  font-size: 1.15rem;
+  color: var(--color-text-dim);
+}
+
+.release-card-links a:hover {
+  color: var(--color-accent-bright);
+}
+
+/* SoundCloud-kokoelma julkaisujen alla */
+.music-soundcloud {
+  max-width: 900px;
+  margin: 4.5rem auto 0;
+  text-align: center;
+}
+
+.music-soundcloud h3 {
+  font-weight: 400;
+}
+
+.music-soundcloud iframe {
+  display: block;
+  width: 100%;
+  height: 450px;
+  border: 0;
+}
+
+.soundcloud-attribution {
+  margin-top: 0.5rem;
+  font-size: 10px;
+  line-break: anywhere;
+  word-break: normal;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif;
+  font-weight: 100;
+}
+
+.soundcloud-attribution a {
+  color: var(--color-text-dim);
+}
+
+/* Videot: nimi kuin klaffitaulu kuvan yläpuolella */
+.music-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 3rem 2.5rem;
+}
+
+.music-video {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  text-align: left;
+}
+
+.music-video figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin-bottom: 0.75rem;
+}
+
+.music-video-title {
+  font-size: 1.02rem;
+}
+
+.music-video-note {
+  font-size: 0.9rem;
+  color: var(--color-text-dim);
+}
+
+.music-video iframe {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  background: var(--color-black);
+}
+
+@media (max-width: 900px) {
+  .music-section {
+    margin-top: 3.5rem;
+    padding-top: 3rem;
+  }
+
+  .release-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .release-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1rem;
+  }
+
+  .music-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .music-soundcloud iframe {
+    height: 400px;
+  }
+
+  .release-card-placeholder {
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+  }
+}
