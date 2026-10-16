@@ -93,8 +93,34 @@ const EXTRA_RELEASES: GeneratedRelease[] = [
   },
 ];
 
+const GENERATED_RELEASES = generated.releases as GeneratedRelease[];
+
+function sameTitle(a: string, b: string): boolean {
+  return a.trim().toLowerCase() === b.trim().toLowerCase();
+}
+
+// Kun käsin lisätty julkaisu myöhemmin löytyy myös automaattisesta hausta (esim. ilmestyy Applelle),
+// se näytetään vain kerran: haetut tiedot ovat etusijalla, ja käsin lisätyt täydentävät
+// puuttuvat kohdat (esim. Spotify-linkin). Rivin voi silloin poistaa EXTRA_RELEASES-listasta, mutta se ei ole pakko.
+const ALL_RELEASES: GeneratedRelease[] = [
+  ...GENERATED_RELEASES.map((release) => {
+    const extra = EXTRA_RELEASES.find((item) => sameTitle(item.title, release.title));
+    if (!extra) return release;
+    return {
+      ...release,
+      releaseDate: release.releaseDate ?? extra.releaseDate,
+      year: release.year ?? extra.year,
+      type: release.type ?? extra.type,
+      cover: release.cover ?? extra.cover,
+      links: { ...extra.links, ...release.links },
+      bandcampItem: release.bandcampItem ?? extra.bandcampItem,
+    };
+  }),
+  ...EXTRA_RELEASES.filter((extra) => !GENERATED_RELEASES.some((release) => sameTitle(release.title, extra.title))),
+];
+
 // Uusin ensin; julkaisut ilman päivämäärää listan loppuun
-export const RELEASES: Release[] = [...(generated.releases as GeneratedRelease[]), ...EXTRA_RELEASES]
+export const RELEASES: Release[] = ALL_RELEASES
   .sort((a, b) => (b.releaseDate ?? '').localeCompare(a.releaseDate ?? ''))
   .filter((release) => !HIDDEN_RELEASES.includes(release.title))
   .map((release) => {
