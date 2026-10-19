@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T12:49:41.864Z",
+  "generatedAt": "2026-10-19T05:46:26.659Z",
   "releases": [
     {
       "id": "6782177755",
@@ -11,9 +11,12 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/ac/3f/46/ac3f4601-055d-eee0-251e-8e57dcfab3a1/artwork.jpg/640x640bb.jpg",
       "links": {
         "appleMusic": "https://music.apple.com/fi/album/yearning-single/6782177755",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/yearning"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/yearning",
+        "spotify": "https://open.spotify.com/album/1hqj66rJI6ekNujTmnh8ix",
+        "deezer": "https://www.deezer.com/album/1008756661",
+        "tidal": "https://listen.tidal.com/album/534553707"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 3495753063
@@ -29,9 +32,12 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/5a/f7/cc/5af7cc1d-043d-88e1-9660-cd99cf2e8e12/artwork.jpg/640x640bb.jpg",
       "links": {
         "appleMusic": "https://music.apple.com/fi/album/%E5%BF%83%E3%81%AE%E7%97%9B%E3%81%BF-pain-of-the-soul-single/1895970312",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/pain-of-the-soul-2"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/pain-of-the-soul-2",
+        "spotify": "https://open.spotify.com/album/206F8iz8DM5AhFiaB7kfbB",
+        "deezer": "https://www.deezer.com/album/973273141",
+        "tidal": "https://listen.tidal.com/album/520547623"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 1327734514
@@ -47,12 +53,36 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2e/ab/a6/2eaba65e-8584-2534-9b52-b849ba4259e8/artwork.jpg/640x640bb.jpg",
       "links": {
         "appleMusic": "https://music.apple.com/fi/album/fog-of-war-single/6764665763",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/fog-of-war"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/fog-of-war",
+        "spotify": "https://open.spotify.com/album/6xmGMGGdMJ5OshK37eJfVb",
+        "deezer": "https://www.deezer.com/album/972409341",
+        "tidal": "https://listen.tidal.com/album/520235549"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 1994299489
+      }
+    },
+    {
+      "id": "6823738356",
+      "title": "The Dark Nine",
+      "releaseDate": "2026-04-02",
+      "year": "2026",
+      "type": "single",
+      "trackCount": 1,
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/f8/6b/dc/f86bdc57-7a1c-d5a5-6ee2-01f4a6f234f7/artwork.jpg/640x640bb.jpg",
+      "links": {
+        "appleMusic": "https://music.apple.com/fi/album/the-dark-nine-single/6823738356",
+        "spotify": "https://open.spotify.com/album/2fdbs8zpuQzNAgHvz7tl57",
+        "deezer": "https://www.deezer.com/album/947802581",
+        "tidal": "https://listen.tidal.com/album/510259685",
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/the-dark-nine"
+      },
+      "linksChecked": true,
+      "bandcampItem": {
+        "type": "track",
+        "id": 3427952782
       }
     },
     {
@@ -66,9 +96,11 @@
       "links": {
         "spotify": "https://open.spotify.com/album/4VtCGUct2PUxax5LouEJz6",
         "appleMusic": "https://music.apple.com/fi/album/beneath-the-surface-single/1870823613",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/beneath-the-surface"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/beneath-the-surface",
+        "deezer": "https://www.deezer.com/album/901631752",
+        "tidal": "https://listen.tidal.com/album/491276959"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 1443146745
@@ -85,9 +117,11 @@
       "links": {
         "spotify": "https://open.spotify.com/album/5GCjU70eNosWM6xg4ekhLm",
         "appleMusic": "https://music.apple.com/fi/album/gold-and-sanguine-single/1870439134",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/gold-and-sanguine"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/gold-and-sanguine",
+        "deezer": "https://www.deezer.com/album/900834592",
+        "tidal": "https://listen.tidal.com/album/490929902"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 45447866
@@ -104,9 +138,11 @@
       "links": {
         "spotify": "https://open.spotify.com/album/5fnqy0gY43XjBvnwPqAGxp",
         "appleMusic": "https://music.apple.com/fi/album/helios-single/1870392379",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/helios"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/helios",
+        "deezer": "https://www.deezer.com/album/900732862",
+        "tidal": "https://listen.tidal.com/album/490881061"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 80218807
@@ -122,9 +158,12 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/d6/e2/8b/d6e28bf6-b275-2819-737c-068a7fbab141/artwork.jpg/640x640bb.jpg",
       "links": {
         "appleMusic": "https://music.apple.com/fi/album/hope-in-the-stars-single/1877442546",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/hope-in-the-stars"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/hope-in-the-stars",
+        "spotify": "https://open.spotify.com/album/17fBDqoKxTyFeOYO3T6yuC",
+        "deezer": "https://www.deezer.com/album/917109161",
+        "tidal": "https://listen.tidal.com/album/498297863"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 2756013600
@@ -142,9 +181,11 @@
         "spotify": "https://open.spotify.com/album/3QPy4LwMR3BnkzbYr2wkwa",
         "appleMusic": "https://music.apple.com/fi/album/chasing-fireflies-single/1869885642",
         "bandcamp": "https://aleksihakala.bandcamp.com/track/chasing-fireflies",
-        "soundcloud": "https://soundcloud.com/aleksihakala/chasing-fireflies"
+        "soundcloud": "https://soundcloud.com/aleksihakala/chasing-fireflies",
+        "deezer": "https://www.deezer.com/album/899400752",
+        "tidal": "https://listen.tidal.com/album/490402585"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 147936536
@@ -160,9 +201,12 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/db/0e/73/db0e7352-6fa7-d22e-70d9-955dcab3551f/artwork.jpg/640x640bb.jpg",
       "links": {
         "appleMusic": "https://music.apple.com/fi/album/bittersweet-goodbyes-single/1869184041",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/bittersweet-goodbyes"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/bittersweet-goodbyes",
+        "spotify": "https://open.spotify.com/album/4TBHmf6KDn1HKelgDOvxOc",
+        "deezer": "https://www.deezer.com/album/897612152",
+        "tidal": "https://listen.tidal.com/album/489758283"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 585162623
@@ -179,9 +223,11 @@
       "links": {
         "spotify": "https://open.spotify.com/album/5IUuX6OOTOHV9dxxBaUHoq",
         "appleMusic": "https://music.apple.com/fi/album/fall-from-grace-single/1867882764",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/fall-from-grace"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/fall-from-grace",
+        "deezer": "https://www.deezer.com/album/894391692",
+        "tidal": "https://listen.tidal.com/album/488508380"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 1877065
@@ -196,9 +242,12 @@
       "trackCount": 1,
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/38/78/33/387833c4-08ba-61d4-517c-d8003cfbe94f/artwork.jpg/640x640bb.jpg",
       "links": {
-        "appleMusic": "https://music.apple.com/fi/album/mik%C3%A4-t%C3%A4%C3%A4-ny-on-single/1820406066"
+        "appleMusic": "https://music.apple.com/fi/album/mik%C3%A4-t%C3%A4%C3%A4-ny-on-single/1820406066",
+        "spotify": "https://open.spotify.com/album/3mgn65XC1N0hoYkfadbMIB",
+        "deezer": "https://www.deezer.com/album/771635531",
+        "tidal": "https://listen.tidal.com/album/441742070"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": null
     },
     {
@@ -212,9 +261,11 @@
       "links": {
         "spotify": "https://open.spotify.com/album/09ISALmKO0zpwbzxQ2NJb2",
         "appleMusic": "https://music.apple.com/fi/album/remember-single/1722782470",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/remember"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/remember",
+        "deezer": "https://www.deezer.com/album/526818122",
+        "tidal": "https://listen.tidal.com/album/336633498"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 2059619436
@@ -231,9 +282,11 @@
       "links": {
         "spotify": "https://open.spotify.com/album/3ocjs5Rduf44OpbVpe5g1l",
         "appleMusic": "https://music.apple.com/fi/album/melodies-from-a-time-before/1704068383",
-        "bandcamp": "https://aleksihakala.bandcamp.com/album/melodies-from-a-time-before"
+        "bandcamp": "https://aleksihakala.bandcamp.com/album/melodies-from-a-time-before",
+        "deezer": "https://www.deezer.com/album/479815405",
+        "tidal": "https://listen.tidal.com/album/312466712"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "album",
         "id": 933380685
@@ -249,9 +302,11 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/6d/e0/46/6de0468c-8cbe-75c2-fa2b-e847ff13272c/artwork.jpg/640x640bb.jpg",
       "links": {
         "spotify": "https://open.spotify.com/album/02XbviqWzRfaPELJdpAEPE",
-        "appleMusic": "https://music.apple.com/fi/album/stargazing-at-night-ep/1703690718"
+        "appleMusic": "https://music.apple.com/fi/album/stargazing-at-night-ep/1703690718",
+        "deezer": "https://www.deezer.com/album/479017725",
+        "tidal": "https://listen.tidal.com/album/312117377"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": null
     },
     {
@@ -265,9 +320,10 @@
       "links": {
         "spotify": "https://open.spotify.com/album/1qheT7QcQ4iZ5TGHp8JTs3",
         "appleMusic": "https://music.apple.com/fi/album/snow-single/1657249398",
-        "bandcamp": "https://aleksihakala.bandcamp.com/track/snow"
+        "bandcamp": "https://aleksihakala.bandcamp.com/track/snow",
+        "tidal": "https://listen.tidal.com/album/263614339"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": {
         "type": "track",
         "id": 431038968
@@ -282,9 +338,12 @@
       "trackCount": 1,
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/fb/44/20/fb442036-4c5a-81d6-2a64-c0452c6653cb/196925570077.jpg/640x640bb.jpg",
       "links": {
-        "appleMusic": "https://music.apple.com/fi/album/living-in-the-dream-feat-aleksi-hakala-single/1641294043"
+        "appleMusic": "https://music.apple.com/fi/album/living-in-the-dream-feat-aleksi-hakala-single/1641294043",
+        "spotify": "https://open.spotify.com/album/4yH8thAT6CIhTQ8mdS90uQ",
+        "deezer": "https://www.deezer.com/album/349264707",
+        "tidal": "https://listen.tidal.com/album/244528263"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": null
     },
     {
@@ -297,9 +356,11 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/b9/3e/ef/b93eefe0-4c5e-d3b7-f184-68b8fd806f01/artwork.jpg/640x640bb.jpg",
       "links": {
         "spotify": "https://open.spotify.com/album/0H8QJEt1EzjFAlb6PqVztZ",
-        "appleMusic": "https://music.apple.com/fi/album/electromania/1862092739"
+        "appleMusic": "https://music.apple.com/fi/album/electromania/1862092739",
+        "deezer": "https://www.deezer.com/album/879165482",
+        "tidal": "https://listen.tidal.com/album/482585584"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": null
     },
     {
@@ -311,9 +372,11 @@
       "trackCount": 1,
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/52/c9/b0/52c9b00f-6d27-9409-6b62-640c548b77bb/artwork.jpg/640x640bb.jpg",
       "links": {
-        "appleMusic": "https://music.apple.com/fi/album/02-20-single/1534241908"
+        "appleMusic": "https://music.apple.com/fi/album/02-20-single/1534241908",
+        "spotify": "https://open.spotify.com/album/3aG3FlSqsYkYNoSytJTzEM",
+        "tidal": "https://listen.tidal.com/album/157162047"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": null
     },
     {
@@ -325,9 +388,11 @@
       "trackCount": 1,
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/f6/af/3f/f6af3f8c-1245-8fa3-43a2-b781796d0419/artwork.jpg/640x640bb.jpg",
       "links": {
-        "appleMusic": "https://music.apple.com/fi/album/tell-me-single/1534028714"
+        "appleMusic": "https://music.apple.com/fi/album/tell-me-single/1534028714",
+        "spotify": "https://open.spotify.com/album/1ORWILOZeSzNq1zkl5ViEV",
+        "tidal": "https://listen.tidal.com/album/157013682"
       },
-      "linksChecked": false,
+      "linksChecked": true,
       "bandcampItem": null
     }
   ]

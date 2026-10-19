@@ -45,12 +45,6 @@ const HIDDEN_RELEASES: string[] = [
 //   'Helios': { links: { bandcamp: 'https://aleksihakala.bandcamp.com/album/helios' } },
 const RELEASE_OVERRIDES: Record<string, Partial<Omit<Release, 'title' | 'links'>> & { links?: Release['links'] }> = {
   'Chasing Fireflies': { cover: chasingFirefliesCover },
-  // Spotify-linkit, joita automaattinen haku ei löytänyt (Songport-avainta odotellessa)
-  'Yearning': { links: { spotify: 'https://open.spotify.com/album/1hqj66rJI6ekNujTmnh8ix' } },
-  '心の痛み / Pain of the Soul': { links: { spotify: 'https://open.spotify.com/album/206F8iz8DM5AhFiaB7kfbB' } },
-  'Fog of War': { links: { spotify: 'https://open.spotify.com/album/6xmGMGGdMJ5OshK37eJfVb' } },
-  'Hope in the Stars': { links: { spotify: 'https://open.spotify.com/album/17fBDqoKxTyFeOYO3T6yuC' } },
-  'Bittersweet Goodbyes': { links: { spotify: 'https://open.spotify.com/album/4TBHmf6KDn1HKelgDOvxOc' } },
 };
 
 const TYPE_LABELS: Record<string, { en: string; fi: string }> = {
@@ -78,20 +72,20 @@ function bandcampPlayerUrl(item: GeneratedRelease['bandcampItem']): string | und
 // Julkaisut, joita ei ole Apple Musicissa (automaattinen haku ei siksi löydä niitä). Lisätään käsin.
 // releaseDate järjestää julkaisun oikeaan kohtaan muiden joukossa (muoto '2024-05-31').
 // type on 'single', 'ep', 'album' tai 'compilation'; null jättää tyypin näyttämättä.
-const EXTRA_RELEASES: GeneratedRelease[] = [
-  {
-    title: 'The Dark Nine',
-    releaseDate: '2026-04-02',
-    year: '2026',
-    type: 'single',
-    cover: 'https://image-cdn-fa.spotifycdn.com/image/ab67616d0000b273c4c3e9426978b5acd5b29343',
-    links: {
-      spotify: 'https://open.spotify.com/album/2fdbs8zpuQzNAgHvz7tl57',
-      bandcamp: 'https://aleksihakala.bandcamp.com/track/the-dark-nine',
-    },
-    bandcampItem: { type: 'track', id: 3427952782 }, // Bandcamp-soittimen tunnus
-  },
-];
+// Malli uutta julkaisua varten (kopioi hakasulkeiden sisään ja vaihda tiedot):
+//   {
+//     title: 'Julkaisun nimi',
+//     releaseDate: '2026-04-02',
+//     year: '2026',
+//     type: 'single',
+//     cover: 'https://...kansikuva.jpg',
+//     links: {
+//       spotify: 'https://open.spotify.com/album/...',
+//       bandcamp: 'https://aleksihakala.bandcamp.com/track/...',
+//     },
+//     bandcampItem: { type: 'track', id: 1234567890 }, // Bandcamp-soittimen tunnus (vapaaehtoinen)
+//   },
+const EXTRA_RELEASES: GeneratedRelease[] = [];
 
 const GENERATED_RELEASES = generated.releases as GeneratedRelease[];
 

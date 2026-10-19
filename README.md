@@ -54,7 +54,7 @@ The Songport key goes into `FrontendHakalaMusic/.env` (ignored by git):
 SONGPORT_API_KEY=sp_live_...
 ```
 
-Without it, Spotify links come from earlier results and manual corrections.
+Without it, Spotify links come from earlier results and manual corrections. Each Songport request counts against the account's monthly quota: a normal run only asks about new or unchecked releases, while `--refresh` asks about every release again.
 
 ### Manual corrections (`src/data/music.ts`)
 
