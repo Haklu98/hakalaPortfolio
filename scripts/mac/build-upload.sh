@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# The site's address. The CloudFront cache is cleared for the distribution that serves this address.
+SITE_DOMAIN="www.hakalamusic.com"
+
 echo "Building and uploading React app..."
 
 # Navigate to frontend directory
@@ -26,16 +29,31 @@ echo "Uploading to S3 bucket: $BUCKET_NAME"
 # Upload to S3
 aws s3 sync dist/ s3://$BUCKET_NAME --delete
 
-# Get CloudFront distribution ID and invalidate
-echo "Getting CloudFront distribution ID..."
-DIST_ID=$(aws cloudfront list-distributions --query "DistributionList.Items[?contains(Origins.Items[0].DomainName, '$BUCKET_NAME')].Id" --output text)
+# Find the CloudFront distribution by the site's address, not by the bucket:
+# an old, unused distribution may point to the same bucket and would be found too.
+echo "Finding the CloudFront distribution for $SITE_DOMAIN..."
+DIST_IDS=$(aws cloudfront list-distributions --query "DistributionList.Items[?contains(not_null(Aliases.Items, \`[]\`), '$SITE_DOMAIN')].Id" --output text)
+DIST_COUNT=$(echo "$DIST_IDS" | wc -w)
 
-if [ ! -z "$DIST_ID" ]; then
-    echo "Invalidating CloudFront cache..."
-    aws cloudfront create-invalidation --distribution-id $DIST_ID --paths "/*"
-    echo "Cache invalidated successfully!"
-else
-    echo "No CloudFront distribution found"
+if [ -z "$DIST_IDS" ] || [ "$DIST_IDS" = "None" ]; then
+    echo "ERROR: No CloudFront distribution found for $SITE_DOMAIN."
+    echo "The files were uploaded, but the live site shows the old version until the cache is cleared."
+    exit 1
 fi
 
-echo "Deployment complete!"
+if [ "$DIST_COUNT" -gt 1 ]; then
+    echo "ERROR: More than one CloudFront distribution uses $SITE_DOMAIN: $DIST_IDS"
+    echo "The files were uploaded, but the cache was not cleared. Clear it by hand:"
+    echo "  aws cloudfront create-invalidation --distribution-id DISTRIBUTION_ID --paths \"/*\""
+    exit 1
+fi
+
+echo "Invalidating CloudFront cache ($DIST_IDS)..."
+if ! aws cloudfront create-invalidation --distribution-id "$DIST_IDS" --paths "/*"; then
+    echo "ERROR: Clearing the CloudFront cache failed (see the message above)."
+    echo "The files were uploaded, but the live site shows the old version until the cache is cleared."
+    exit 1
+fi
+
+echo "Cache invalidation started. The live site updates within a few minutes."
+echo "Deployment complete!"
